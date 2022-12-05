@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7C293E418900FF1C3E /* AppDelegate.swift */; };
+		CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */; };
+		CAB83A81293E418900FF1C3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A80293E418900FF1C3E /* ViewController.swift */; };
+		CAB83A84293E418900FF1C3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB83A82293E418900FF1C3E /* Main.storyboard */; };
+		CAB83A86293E418A00FF1C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAB83A85293E418A00FF1C3E /* Assets.xcassets */; };
+		CAB83A89293E418A00FF1C3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB83A87293E418A00FF1C3E /* LaunchScreen.storyboard */; };
+		CAB83A94293E418B00FF1C3E /* WaterMinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A93293E418B00FF1C3E /* WaterMinderTests.swift */; };
+		CAB83A9E293E418B00FF1C3E /* WaterMinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A9D293E418B00FF1C3E /* WaterMinderUITests.swift */; };
+		CAB83AA0293E418B00FF1C3E /* WaterMinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A9F293E418B00FF1C3E /* WaterMinderUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CAB83A90293E418B00FF1C3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAB83A71293E418900FF1C3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAB83A78293E418900FF1C3E;
+			remoteInfo = WaterMinder;
+		};
+		CAB83A9A293E418B00FF1C3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAB83A71293E418900FF1C3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAB83A78293E418900FF1C3E;
+			remoteInfo = WaterMinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CAB83A79293E418900FF1C3E /* WaterMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAB83A7C293E418900FF1C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CAB83A80293E418900FF1C3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAB83A83293E418900FF1C3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CAB83A85293E418A00FF1C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CAB83A88293E418A00FF1C3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CAB83A8A293E418A00FF1C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAB83A8F293E418B00FF1C3E /* WaterMinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterMinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAB83A93293E418B00FF1C3E /* WaterMinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMinderTests.swift; sourceTree = "<group>"; };
+		CAB83A99293E418B00FF1C3E /* WaterMinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterMinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAB83A9D293E418B00FF1C3E /* WaterMinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMinderUITests.swift; sourceTree = "<group>"; };
+		CAB83A9F293E418B00FF1C3E /* WaterMinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CAB83A76293E418900FF1C3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAB83A8C293E418B00FF1C3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAB83A96293E418B00FF1C3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CAB83A70293E418900FF1C3E = {
+			isa = PBXGroup;
+			children = (
+				CAB83A7B293E418900FF1C3E /* WaterMinder */,
+				CAB83A92293E418B00FF1C3E /* WaterMinderTests */,
+				CAB83A9C293E418B00FF1C3E /* WaterMinderUITests */,
+				CAB83A7A293E418900FF1C3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CAB83A7A293E418900FF1C3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83A79293E418900FF1C3E /* WaterMinder.app */,
+				CAB83A8F293E418B00FF1C3E /* WaterMinderTests.xctest */,
+				CAB83A99293E418B00FF1C3E /* WaterMinderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CAB83A7B293E418900FF1C3E /* WaterMinder */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83A7C293E418900FF1C3E /* AppDelegate.swift */,
+				CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */,
+				CAB83A80293E418900FF1C3E /* ViewController.swift */,
+				CAB83A82293E418900FF1C3E /* Main.storyboard */,
+				CAB83A85293E418A00FF1C3E /* Assets.xcassets */,
+				CAB83A87293E418A00FF1C3E /* LaunchScreen.storyboard */,
+				CAB83A8A293E418A00FF1C3E /* Info.plist */,
+			);
+			path = WaterMinder;
+			sourceTree = "<group>";
+		};
+		CAB83A92293E418B00FF1C3E /* WaterMinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83A93293E418B00FF1C3E /* WaterMinderTests.swift */,
+			);
+			path = WaterMinderTests;
+			sourceTree = "<group>";
+		};
+		CAB83A9C293E418B00FF1C3E /* WaterMinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83A9D293E418B00FF1C3E /* WaterMinderUITests.swift */,
+				CAB83A9F293E418B00FF1C3E /* WaterMinderUITestsLaunchTests.swift */,
+			);
+			path = WaterMinderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CAB83A78293E418900FF1C3E /* WaterMinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAB83AA3293E418B00FF1C3E /* Build configuration list for PBXNativeTarget "WaterMinder" */;
+			buildPhases = (
+				CAB83A75293E418900FF1C3E /* Sources */,
+				CAB83A76293E418900FF1C3E /* Frameworks */,
+				CAB83A77293E418900FF1C3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaterMinder;
+			productName = WaterMinder;
+			productReference = CAB83A79293E418900FF1C3E /* WaterMinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CAB83A8E293E418B00FF1C3E /* WaterMinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAB83AA6293E418B00FF1C3E /* Build configuration list for PBXNativeTarget "WaterMinderTests" */;
+			buildPhases = (
+				CAB83A8B293E418B00FF1C3E /* Sources */,
+				CAB83A8C293E418B00FF1C3E /* Frameworks */,
+				CAB83A8D293E418B00FF1C3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAB83A91293E418B00FF1C3E /* PBXTargetDependency */,
+			);
+			name = WaterMinderTests;
+			productName = WaterMinderTests;
+			productReference = CAB83A8F293E418B00FF1C3E /* WaterMinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CAB83A98293E418B00FF1C3E /* WaterMinderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAB83AA9293E418B00FF1C3E /* Build configuration list for PBXNativeTarget "WaterMinderUITests" */;
+			buildPhases = (
+				CAB83A95293E418B00FF1C3E /* Sources */,
+				CAB83A96293E418B00FF1C3E /* Frameworks */,
+				CAB83A97293E418B00FF1C3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAB83A9B293E418B00FF1C3E /* PBXTargetDependency */,
+			);
+			name = WaterMinderUITests;
+			productName = WaterMinderUITests;
+			productReference = CAB83A99293E418B00FF1C3E /* WaterMinderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CAB83A71293E418900FF1C3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					CAB83A78293E418900FF1C3E = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					CAB83A8E293E418B00FF1C3E = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = CAB83A78293E418900FF1C3E;
+					};
+					CAB83A98293E418B00FF1C3E = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = CAB83A78293E418900FF1C3E;
+					};
+				};
+			};
+			buildConfigurationList = CAB83A74293E418900FF1C3E /* Build configuration list for PBXProject "WaterMinder" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CAB83A70293E418900FF1C3E;
+			productRefGroup = CAB83A7A293E418900FF1C3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CAB83A78293E418900FF1C3E /* WaterMinder */,
+				CAB83A8E293E418B00FF1C3E /* WaterMinderTests */,
+				CAB83A98293E418B00FF1C3E /* WaterMinderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CAB83A77293E418900FF1C3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAB83A89293E418A00FF1C3E /* LaunchScreen.storyboard in Resources */,
+				CAB83A86293E418A00FF1C3E /* Assets.xcassets in Resources */,
+				CAB83A84293E418900FF1C3E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAB83A8D293E418B00FF1C3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAB83A97293E418B00FF1C3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CAB83A75293E418900FF1C3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAB83A81293E418900FF1C3E /* ViewController.swift in Sources */,
+				CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */,
+				CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAB83A8B293E418B00FF1C3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAB83A94293E418B00FF1C3E /* WaterMinderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAB83A95293E418B00FF1C3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAB83A9E293E418B00FF1C3E /* WaterMinderUITests.swift in Sources */,
+				CAB83AA0293E418B00FF1C3E /* WaterMinderUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CAB83A91293E418B00FF1C3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAB83A78293E418900FF1C3E /* WaterMinder */;
+			targetProxy = CAB83A90293E418B00FF1C3E /* PBXContainerItemProxy */;
+		};
+		CAB83A9B293E418B00FF1C3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAB83A78293E418900FF1C3E /* WaterMinder */;
+			targetProxy = CAB83A9A293E418B00FF1C3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CAB83A82293E418900FF1C3E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAB83A83293E418900FF1C3E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CAB83A87293E418A00FF1C3E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAB83A88293E418A00FF1C3E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CAB83AA1293E418B00FF1C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CAB83AA2293E418B00FF1C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CAB83AA4293E418B00FF1C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WB3Y8FF57H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterMinder/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yuliasimanavets.WaterMinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CAB83AA5293E418B00FF1C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WB3Y8FF57H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterMinder/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yuliasimanavets.WaterMinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CAB83AA7293E418B00FF1C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WB3Y8FF57H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yuliasimanavets.WaterMinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterMinder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WaterMinder";
+			};
+			name = Debug;
+		};
+		CAB83AA8293E418B00FF1C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WB3Y8FF57H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yuliasimanavets.WaterMinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterMinder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WaterMinder";
+			};
+			name = Release;
+		};
+		CAB83AAA293E418B00FF1C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WB3Y8FF57H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yuliasimanavets.WaterMinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WaterMinder;
+			};
+			name = Debug;
+		};
+		CAB83AAB293E418B00FF1C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WB3Y8FF57H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yuliasimanavets.WaterMinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WaterMinder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CAB83A74293E418900FF1C3E /* Build configuration list for PBXProject "WaterMinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAB83AA1293E418B00FF1C3E /* Debug */,
+				CAB83AA2293E418B00FF1C3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAB83AA3293E418B00FF1C3E /* Build configuration list for PBXNativeTarget "WaterMinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAB83AA4293E418B00FF1C3E /* Debug */,
+				CAB83AA5293E418B00FF1C3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAB83AA6293E418B00FF1C3E /* Build configuration list for PBXNativeTarget "WaterMinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAB83AA7293E418B00FF1C3E /* Debug */,
+				CAB83AA8293E418B00FF1C3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAB83AA9293E418B00FF1C3E /* Build configuration list for PBXNativeTarget "WaterMinderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAB83AAA293E418B00FF1C3E /* Debug */,
+				CAB83AAB293E418B00FF1C3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CAB83A71293E418900FF1C3E /* Project object */;
+}
