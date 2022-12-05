@@ -60,6 +60,7 @@ class HandbookHeaderCollection: UICollectionReusableView {
             itemOnHeaderView.topAnchor.constraint(equalTo: headerSegmentedControl.bottomAnchor, constant: 20),
             itemOnHeaderView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             itemOnHeaderView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+        
         ])
     }
 
@@ -113,9 +114,9 @@ class HeaderView: UIView {
     
     private func setupView() {
         
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = .white
-        self.layer.cornerRadius = 15
+        translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .darkGray
+        layer.cornerRadius = 15
         
         addSubview(imageOnView)
         imageOnView.translatesAutoresizingMaskIntoConstraints = false
@@ -138,7 +139,8 @@ class HeaderView: UIView {
 
             textUnderChallengesLabel.topAnchor.constraint(equalTo: challengesLabel.bottomAnchor, constant: 5),
             textUnderChallengesLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            textUnderChallengesLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            textUnderChallengesLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            textUnderChallengesLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
     }
     
