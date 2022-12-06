@@ -9,14 +9,14 @@ import UIKit
 
 struct ChallengesViewModel {
     
-    let leftNamedImageView: String
-    let rightNamedImageView: String
+    let leftImage: UIImage?
+    let rightImage: UIImage?
     
-    let leftTextChallenge: String
-    let rightTextChallenge: String
+    let leftChallengeText: String
+    let rightChallengeText: String
     
-    let leftTextNameChallenge: String
-    let rightTextNameChallenge: String
+    let leftChallengeNameText: String
+    let rightChallengeNameText: String
     
     let backgroundColor: UIColor
 }
@@ -27,14 +27,28 @@ class HandbookChallengesViewCell: UICollectionViewCell {
         return String(describing: HandbookChallengesViewCell.self)
     }
     
-    let leftWaterImageView = UIImageView()
-    let rightTextNameChallenge = UILabel()
-    let rightTextChallenge = UILabel()
+    private let leftWaterImageView = UIImageView()
+    private let rightNameChallengeLabel = UILabel()
     
-    let rightWaterImageView = UIImageView()
-    let leftTextNameChallenge = UILabel()
-    let leftTextChallenge = UILabel()
+    private let rightChallengeLabel: UILabel = {
+        let challengeLable = UILabel()
+        challengeLable.translatesAutoresizingMaskIntoConstraints = false
+        challengeLable.font = .systemFont(ofSize: 16)
+        challengeLable.textColor = .white
+        return challengeLable
+    }()
     
+    private let rightWaterImageView = UIImageView()
+    private let leftNameChallengeLable = UILabel()
+    
+    private let leftChallengeLabel: UILabel = {
+        let challengeLable = UILabel()
+        challengeLable.translatesAutoresizingMaskIntoConstraints = false
+        challengeLable.font = .systemFont(ofSize: 16)
+        challengeLable.textColor = .white
+        return challengeLable
+    }()
+   
     init() {
         super.init(frame: .zero)
         setupView()
@@ -49,28 +63,26 @@ class HandbookChallengesViewCell: UICollectionViewCell {
         super.init(coder: coder)
     }
     
-    func setupView() {
+    private func setupView() {
         
         contentView.layer.cornerRadius = 20
         
         contentView.addSubview(rightWaterImageView)
         rightWaterImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        contentView.addSubview(leftTextChallenge)
-        leftTextChallenge.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(leftChallengeLabel)
         
-        contentView.addSubview(leftTextNameChallenge)
-        leftTextNameChallenge.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(leftNameChallengeLable)
+        leftNameChallengeLable.translatesAutoresizingMaskIntoConstraints = false
         
         
         contentView.addSubview(leftWaterImageView)
         leftWaterImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        contentView.addSubview(rightTextChallenge)
-        rightTextChallenge.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(rightChallengeLabel)
         
-        contentView.addSubview(rightTextNameChallenge)
-        rightTextNameChallenge.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(rightNameChallengeLabel)
+        rightNameChallengeLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             leftWaterImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
@@ -78,12 +90,12 @@ class HandbookChallengesViewCell: UICollectionViewCell {
             leftWaterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             leftWaterImageView.widthAnchor.constraint(equalToConstant: 110),
             
-            rightTextChallenge.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
-            rightTextChallenge.leadingAnchor.constraint(equalTo: leftWaterImageView.trailingAnchor, constant: 30),
+            rightChallengeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
+            rightChallengeLabel.leadingAnchor.constraint(equalTo: leftWaterImageView.trailingAnchor, constant: 30),
             
-            rightTextNameChallenge.topAnchor.constraint(equalTo: rightTextChallenge.bottomAnchor, constant: 10),
-            rightTextNameChallenge.leadingAnchor.constraint(equalTo: leftWaterImageView.trailingAnchor, constant: 30),
-            rightTextNameChallenge.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            rightNameChallengeLabel.topAnchor.constraint(equalTo: rightChallengeLabel.bottomAnchor, constant: 10),
+            rightNameChallengeLabel.leadingAnchor.constraint(equalTo: leftWaterImageView.trailingAnchor, constant: 30),
+            rightNameChallengeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             
             
             
@@ -92,42 +104,37 @@ class HandbookChallengesViewCell: UICollectionViewCell {
             rightWaterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             rightWaterImageView.widthAnchor.constraint(equalToConstant: 110),
 
-            leftTextChallenge.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
-            leftTextChallenge.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            leftChallengeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
+            leftChallengeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
             
-            leftTextNameChallenge.topAnchor.constraint(equalTo: leftTextChallenge.bottomAnchor, constant: 10),
-            leftTextNameChallenge.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            leftTextNameChallenge.trailingAnchor.constraint(equalTo: rightWaterImageView.leadingAnchor, constant: -10)
+            leftNameChallengeLable.topAnchor.constraint(equalTo: leftChallengeLabel.bottomAnchor, constant: 10),
+            leftNameChallengeLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            leftNameChallengeLable.trailingAnchor.constraint(equalTo: rightWaterImageView.leadingAnchor, constant: -10)
         ])
     }
     
     func set(_ itemsInWater: ChallengesViewModel) {
         
-        leftWaterImageView.image = UIImage(named: itemsInWater.leftNamedImageView)
+        leftWaterImageView.image = itemsInWater.leftImage
 
-        rightWaterImageView.image = UIImage(named: itemsInWater.rightNamedImageView)
+        rightWaterImageView.image = itemsInWater.rightImage
         
         contentView.backgroundColor = itemsInWater.backgroundColor
+    
+        leftChallengeLabel.text = itemsInWater.leftChallengeText
+        rightChallengeLabel.text = itemsInWater.rightChallengeText
         
-        leftTextChallenge.text = itemsInWater.leftTextChallenge
-        leftTextChallenge.font = .systemFont(ofSize: 16)
-        leftTextChallenge.textColor = .white
+        leftNameChallengeLable.text = itemsInWater.leftChallengeNameText
+        leftNameChallengeLable.textColor = .white
+        leftNameChallengeLable.font = .systemFont(ofSize: 22, weight: .heavy)
+        leftNameChallengeLable.numberOfLines = 0
+        leftNameChallengeLable.lineBreakMode = .byWordWrapping
         
-        rightTextChallenge.text = itemsInWater.rightTextChallenge
-        rightTextChallenge.font = .systemFont(ofSize: 16)
-        rightTextChallenge.textColor = .white
-        
-        leftTextNameChallenge.text = itemsInWater.leftTextNameChallenge
-        leftTextNameChallenge.textColor = .white
-        leftTextNameChallenge.font = .systemFont(ofSize: 22, weight: .heavy)
-        leftTextNameChallenge.numberOfLines = 0
-        leftTextNameChallenge.lineBreakMode = .byWordWrapping
-        
-        rightTextNameChallenge.text = itemsInWater.rightTextNameChallenge
-        rightTextNameChallenge.textColor = .white
-        rightTextNameChallenge.font = .systemFont(ofSize: 22, weight: .heavy)
-        rightTextNameChallenge.numberOfLines = 0
-        rightTextNameChallenge.lineBreakMode = .byWordWrapping
+        rightNameChallengeLabel.text = itemsInWater.rightChallengeNameText
+        rightNameChallengeLabel.textColor = .white
+        rightNameChallengeLabel.font = .systemFont(ofSize: 22, weight: .heavy)
+        rightNameChallengeLabel.numberOfLines = 0
+        rightNameChallengeLabel.lineBreakMode = .byWordWrapping
     }
     
 }

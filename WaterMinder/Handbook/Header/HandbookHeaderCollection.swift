@@ -8,9 +8,9 @@
 import UIKit
 
 struct HandbookHeaderViewModel {
-    let textHandbook: String
-    let firstSegmentedControl: String
-    let secondSegmentedControl: String
+    let handbookText: String
+//    let firstSegmentedControlName: String
+//    let secondSegmentedControlName: String
 }
 
 class HandbookHeaderCollection: UICollectionReusableView {
@@ -21,7 +21,7 @@ class HandbookHeaderCollection: UICollectionReusableView {
 
     private let handbookLabel = UILabel()
     private var headerSegmentedControl = UISegmentedControl()
-    private let itemOnHeaderView = HeaderView()
+    private let itemOnHeaderView = ViewInHeader()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,10 +30,6 @@ class HandbookHeaderCollection: UICollectionReusableView {
     
     required init?(coder: NSCoder) {
         fatalError()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
     }
     
     private func setupView() {
@@ -49,34 +45,34 @@ class HandbookHeaderCollection: UICollectionReusableView {
 
         NSLayoutConstraint.activate([
             handbookLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            handbookLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            handbookLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            handbookLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            handbookLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
             headerSegmentedControl.topAnchor.constraint(equalTo: handbookLabel.bottomAnchor, constant: 15),
-            headerSegmentedControl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            headerSegmentedControl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            headerSegmentedControl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            headerSegmentedControl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             headerSegmentedControl.heightAnchor.constraint(equalToConstant: 30),
             
             itemOnHeaderView.topAnchor.constraint(equalTo: headerSegmentedControl.bottomAnchor, constant: 20),
-            itemOnHeaderView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            itemOnHeaderView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            itemOnHeaderView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            itemOnHeaderView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         
         ])
     }
 
     func set(_ dataHeader: HandbookHeaderViewModel) {
 
-        headerSegmentedControl.insertSegment(withTitle: dataHeader.firstSegmentedControl, at: 0, animated: true)
-        headerSegmentedControl.insertSegment(withTitle: dataHeader.secondSegmentedControl, at: 1, animated: true)
+        headerSegmentedControl.insertSegment(withTitle: "Challengies", at: 0, animated: true)
+        headerSegmentedControl.insertSegment(withTitle: "Achievements", at: 1, animated: true)
         headerSegmentedControl.backgroundColor = .white
-        headerSegmentedControl.selectedSegmentTintColor = .systemBlue
-        headerSegmentedControl.tintColor = .white
+        headerSegmentedControl.selectedSegmentTintColor = .gray
+        headerSegmentedControl.tintColor = .black
         
-        handbookLabel.text = dataHeader.textHandbook
+        handbookLabel.text = dataHeader.handbookText
         handbookLabel.font = .systemFont(ofSize: 30, weight: .heavy)
-        handbookLabel.textColor = .white
+        handbookLabel.textColor = .black
         
-        itemOnHeaderView.set(HeaderViewModel(nameImageOnView: "trophy.fill",
+        itemOnHeaderView.set(HeaderViewModel(nameImageOnView: UIImage(systemName: "trophy.fill"),
                                              generalText: "Challenges",
                                              addText: "Test yourself by completing these challenges"))
     }
@@ -84,15 +80,15 @@ class HandbookHeaderCollection: UICollectionReusableView {
 }
 
 struct HeaderViewModel {
-    let nameImageOnView: String
+    let nameImageOnView: UIImage?
     let generalText: String
     let addText: String
 }
 
-class HeaderView: UIView {
+class ViewInHeader: UIView {
     
     static var identifier: String {
-        return String(describing: HeaderView.self)
+        return String(describing: ViewInHeader.self)
     }
 
     private let imageOnView = UIImageView()
@@ -108,14 +104,10 @@ class HeaderView: UIView {
         fatalError()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     private func setupView() {
         
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .darkGray
+        backgroundColor = .systemGray
         layer.cornerRadius = 15
         
         addSubview(imageOnView)
@@ -146,16 +138,17 @@ class HeaderView: UIView {
     
     func set(_ dataView: HeaderViewModel) {
                 
-        imageOnView.image = UIImage(systemName: dataView.nameImageOnView)
+        imageOnView.image = dataView.nameImageOnView
         imageOnView.tintColor = .systemYellow
 
         challengesLabel.text = dataView.generalText
-        challengesLabel.textColor = .white
+        challengesLabel.textColor = .black
         challengesLabel.font = .systemFont(ofSize: 18, weight: .heavy)
         challengesLabel.textAlignment = .center
 
         textUnderChallengesLabel.text = dataView.addText
         textUnderChallengesLabel.font = .systemFont(ofSize: 12)
+        textUnderChallengesLabel.textColor = .black
         textUnderChallengesLabel.numberOfLines = 0
         textUnderChallengesLabel.lineBreakMode = .byWordWrapping
         textUnderChallengesLabel.textAlignment = .center

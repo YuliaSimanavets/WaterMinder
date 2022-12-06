@@ -11,9 +11,7 @@ class HandbookViewController: UIViewController,
                               UICollectionViewDelegate,
                               UICollectionViewDataSource,
                               UICollectionViewDelegateFlowLayout {
-
     
-
     private var handbookCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero,
@@ -23,50 +21,50 @@ class HandbookViewController: UIViewController,
         return collectionView
     }()
     
-    let array = [
-        ChallengesViewModel(leftNamedImageView: "",
-                            rightNamedImageView: "1",
-                            leftTextChallenge: "CHALLENGE",
-                            rightTextChallenge: "",
-                            leftTextNameChallenge: "21-Day Hydration Habit",
-                            rightTextNameChallenge: "",
+    private let itemsChallenges = [
+        ChallengesViewModel(leftImage: UIImage(named: "0"),
+                            rightImage: UIImage(named: "1"),
+                            leftChallengeText: "CHALLENGE",
+                            rightChallengeText: "",
+                            leftChallengeNameText: "21-Day Hydration Habit",
+                            rightChallengeNameText: "",
                             backgroundColor: .systemTeal),
-        ChallengesViewModel(leftNamedImageView: "2",
-                            rightNamedImageView: "",
-                            leftTextChallenge: "",
-                            rightTextChallenge: "CHALLENGE",
-                            leftTextNameChallenge: "",
-                            rightTextNameChallenge: "Pure Water",
+        ChallengesViewModel(leftImage: UIImage(named: "2"),
+                            rightImage: UIImage(named: ""),
+                            leftChallengeText: "",
+                            rightChallengeText: "CHALLENGE",
+                            leftChallengeNameText: "",
+                            rightChallengeNameText: "Pure Water",
                             backgroundColor: .systemPink),
-        ChallengesViewModel(leftNamedImageView: "",
-                            rightNamedImageView: "3",
-                            leftTextChallenge: "CHALLENGE",
-                            rightTextChallenge: "",
-                            leftTextNameChallenge: "Vitamin Boost",
-                            rightTextNameChallenge: "",
+        ChallengesViewModel(leftImage: UIImage(named: ""),
+                            rightImage: UIImage(named: "3"),
+                            leftChallengeText: "CHALLENGE",
+                            rightChallengeText: "",
+                            leftChallengeNameText: "Vitamin Boost",
+                            rightChallengeNameText: "",
                             backgroundColor: .systemGreen),
-        ChallengesViewModel(leftNamedImageView: "4",
-                            rightNamedImageView: "",
-                            leftTextChallenge: "",
-                            rightTextChallenge: "CHALLENGE",
-                            leftTextNameChallenge: "",
-                            rightTextNameChallenge: "Vitamin Boost",
+        ChallengesViewModel(leftImage: UIImage(named: "4"),
+                            rightImage: UIImage(named: ""),
+                            leftChallengeText: "",
+                            rightChallengeText: "CHALLENGE",
+                            leftChallengeNameText: "",
+                            rightChallengeNameText: "Vitamin Boost",
                             backgroundColor: .systemCyan)
     ]
-     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .lightGray
-
+        
         view.addSubview(handbookCollectionView)
         handbookCollectionView.backgroundColor = .lightGray
         
         handbookCollectionView.register(HandbookChallengesViewCell.self,
-                                forCellWithReuseIdentifier: HandbookChallengesViewCell.identifier)
+                                        forCellWithReuseIdentifier: HandbookChallengesViewCell.identifier)
         handbookCollectionView.register(HandbookHeaderCollection.self,
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: HandbookHeaderCollection.identifier)
+                                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                        withReuseIdentifier: HandbookHeaderCollection.identifier)
         handbookCollectionView.delegate = self
         handbookCollectionView.dataSource = self
         
@@ -77,16 +75,15 @@ class HandbookViewController: UIViewController,
             handbookCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             handbookCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return array.count
+        return itemsChallenges.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HandbookChallengesViewCell.identifier, for: indexPath) as? HandbookChallengesViewCell {
-            cell.set(array[indexPath.item])
+            cell.set(itemsChallenges[indexPath.item])
             return cell
         }
         return UICollectionViewCell()
@@ -100,19 +97,20 @@ class HandbookViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                                        withReuseIdentifier: HandbookHeaderCollection.identifier,
-                                                                        for: indexPath) as? HandbookHeaderCollection {
-
-            header.set(HandbookHeaderViewModel(textHandbook: "Handbook", firstSegmentedControl: "Challengies", secondSegmentedControl: "Achievements"))
-
-            return header
-        }
-        return UICollectionReusableView()
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                     withReuseIdentifier: HandbookHeaderCollection.identifier,
+                                                                     for: indexPath)
+        
+        guard let myHeader = header as? HandbookHeaderCollection else { return header }
+        
+        myHeader.set(HandbookHeaderViewModel(handbookText: "Handbook"))
+        
+        return myHeader
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 280)
+        return CGSize(width: view.frame.size.width, height: 270)
     }
     
 }
