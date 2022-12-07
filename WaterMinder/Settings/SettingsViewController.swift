@@ -23,6 +23,13 @@ class SettingsViewController: UIViewController,
         return collectionView
     }()
     
+    let itemInSections = [
+        SettingsTitleViewModel(titleText: "Cups", addText: "tap icon to change value"),
+        SettingsTitleViewModel(titleText: "Appearance", addText: ""),
+        SettingsImageWithTitleViewModel(nearTitleImage: UIImage(systemName: "apple.logo"), title: "Theme"),
+        SettingsImageWithTitleViewModel(nearTitleImage: UIImage(systemName: "apple.logo"), title: "Theme"),
+    ] as [Any]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,10 +57,32 @@ class SettingsViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SettingsTitleViewCell.identifier, for: indexPath) as? SettingsTitleViewCell {
-            cell.set(SettingsTitleViewModel(titleText: "Cups", addText: ""))
-            return cell
+       
+        if indexPath.section == 0, indexPath.item == 0 {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SettingsTitleViewCell.identifier, for: indexPath)
+            guard let cellFirst = cell as? SettingsTitleViewCell else { fatalError() }
+
+            cellFirst.set(itemInSections[0] as! SettingsTitleViewModel)
+            return cellFirst
+        } else if indexPath.section == 0, indexPath.item == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SettingsTitleViewCell.identifier, for: indexPath)
+            guard let cellSecond = cell as? SettingsTitleViewCell else { fatalError() }
+
+            cellSecond.set(itemInSections[1] as! SettingsTitleViewModel)
+            return cellSecond
+        } else if indexPath.section == 0, indexPath.item == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SettingsImageWithTitleViewCell.identifier, for: indexPath)
+            guard let cellThird = cell as? SettingsImageWithTitleViewCell else { fatalError() }
+
+            cellThird.set(itemInSections[2] as! SettingsImageWithTitleViewModel)
+            return cellThird
+        } else if indexPath.section == 0, indexPath.item == 3 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SettingsImageWithTitleViewCell.identifier, for: indexPath)
+            guard let cellThird = cell as? SettingsImageWithTitleViewCell else { fatalError() }
+            
+            cellThird.set(itemInSections[3] as! SettingsImageWithTitleViewModel)
+            return cellThird
         }
         return UICollectionViewCell()
     }
