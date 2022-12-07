@@ -10,7 +10,7 @@
 		CA602126293E5CDA006FFCB1 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */; };
 		CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7C293E418900FF1C3E /* AppDelegate.swift */; };
 		CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */; };
-		CAB83A81293E418900FF1C3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A80293E418900FF1C3E /* ViewController.swift */; };
+		CAB83A81293E418900FF1C3E /* WaterMinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A80293E418900FF1C3E /* WaterMinderViewController.swift */; };
 		CAB83A86293E418A00FF1C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAB83A85293E418A00FF1C3E /* Assets.xcassets */; };
 		CAB83A89293E418A00FF1C3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB83A87293E418A00FF1C3E /* LaunchScreen.storyboard */; };
 		CAB83A94293E418B00FF1C3E /* WaterMinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A93293E418B00FF1C3E /* WaterMinderTests.swift */; };
@@ -22,6 +22,7 @@
 		CAB83AB5293E425400FF1C3E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AB4293E425400FF1C3E /* AccountViewController.swift */; };
 		CAB83AC1293E4BB400FF1C3E /* HandbookChallengesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AC0293E4BB400FF1C3E /* HandbookChallengesViewCell.swift */; };
 		CAB83AC3293E4BCC00FF1C3E /* HandbookHeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AC2293E4BCC00FF1C3E /* HandbookHeaderCollection.swift */; };
+		CABBA3E32940D2E000B26EE4 /* HandbookHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBA3E22940D2E000B26EE4 /* HandbookHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,7 @@
 		CAB83A79293E418900FF1C3E /* WaterMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB83A7C293E418900FF1C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CAB83A80293E418900FF1C3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAB83A80293E418900FF1C3E /* WaterMinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMinderViewController.swift; sourceTree = "<group>"; };
 		CAB83A85293E418A00FF1C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAB83A88293E418A00FF1C3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAB83A8A293E418A00FF1C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		CAB83AB4293E425400FF1C3E /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		CAB83AC0293E4BB400FF1C3E /* HandbookChallengesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookChallengesViewCell.swift; sourceTree = "<group>"; };
 		CAB83AC2293E4BCC00FF1C3E /* HandbookHeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookHeaderCollection.swift; sourceTree = "<group>"; };
+		CABBA3E22940D2E000B26EE4 /* HandbookHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +190,7 @@
 		CAB83AAD293E41F500FF1C3E /* WaterMinder */ = {
 			isa = PBXGroup;
 			children = (
-				CAB83A80293E418900FF1C3E /* ViewController.swift */,
+				CAB83A80293E418900FF1C3E /* WaterMinderViewController.swift */,
 			);
 			path = WaterMinder;
 			sourceTree = "<group>";
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB83AC2293E4BCC00FF1C3E /* HandbookHeaderCollection.swift */,
+				CABBA3E22940D2E000B26EE4 /* HandbookHeaderView.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -340,10 +343,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAB83AC3293E4BCC00FF1C3E /* HandbookHeaderCollection.swift in Sources */,
-				CAB83A81293E418900FF1C3E /* ViewController.swift in Sources */,
+				CAB83A81293E418900FF1C3E /* WaterMinderViewController.swift in Sources */,
 				CA602126293E5CDA006FFCB1 /* CustomTabBarController.swift in Sources */,
 				CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */,
 				CAB83AB5293E425400FF1C3E /* AccountViewController.swift in Sources */,
+				CABBA3E32940D2E000B26EE4 /* HandbookHeaderView.swift in Sources */,
 				CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */,
 				CAB83AC1293E4BB400FF1C3E /* HandbookChallengesViewCell.swift in Sources */,
 				CAB83AB3293E424900FF1C3E /* HistoryViewController.swift in Sources */,

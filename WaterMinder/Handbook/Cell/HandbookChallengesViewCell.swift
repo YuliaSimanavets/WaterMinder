@@ -28,7 +28,15 @@ class HandbookChallengesViewCell: UICollectionViewCell {
     }
     
     private let leftWaterImageView = UIImageView()
-    private let rightNameChallengeLabel = UILabel()
+    
+    private let rightNameChallengeLabel: UILabel = {
+        let nameChallengeLabel = UILabel()
+        nameChallengeLabel.textColor = .white
+        nameChallengeLabel.font = .systemFont(ofSize: 22, weight: .heavy)
+        nameChallengeLabel.numberOfLines = 0
+        nameChallengeLabel.lineBreakMode = .byWordWrapping
+        return nameChallengeLabel
+    }()
     
     private let rightChallengeLabel: UILabel = {
         let challengeLable = UILabel()
@@ -39,7 +47,15 @@ class HandbookChallengesViewCell: UICollectionViewCell {
     }()
     
     private let rightWaterImageView = UIImageView()
-    private let leftNameChallengeLable = UILabel()
+    
+    private let leftNameChallengeLable: UILabel = {
+        let nameChallengeLabel = UILabel()
+        nameChallengeLabel.textColor = .white
+        nameChallengeLabel.font = .systemFont(ofSize: 22, weight: .heavy)
+        nameChallengeLabel.numberOfLines = 0
+        nameChallengeLabel.lineBreakMode = .byWordWrapping
+        return nameChallengeLabel
+    }()
     
     private let leftChallengeLabel: UILabel = {
         let challengeLable = UILabel()
@@ -116,7 +132,6 @@ class HandbookChallengesViewCell: UICollectionViewCell {
     func set(_ itemsInWater: ChallengesViewModel) {
         
         leftWaterImageView.image = itemsInWater.leftImage
-
         rightWaterImageView.image = itemsInWater.rightImage
         
         contentView.backgroundColor = itemsInWater.backgroundColor
@@ -125,16 +140,7 @@ class HandbookChallengesViewCell: UICollectionViewCell {
         rightChallengeLabel.text = itemsInWater.rightChallengeText
         
         leftNameChallengeLable.text = itemsInWater.leftChallengeNameText
-        leftNameChallengeLable.textColor = .white
-        leftNameChallengeLable.font = .systemFont(ofSize: 22, weight: .heavy)
-        leftNameChallengeLable.numberOfLines = 0
-        leftNameChallengeLable.lineBreakMode = .byWordWrapping
-        
         rightNameChallengeLabel.text = itemsInWater.rightChallengeNameText
-        rightNameChallengeLabel.textColor = .white
-        rightNameChallengeLabel.font = .systemFont(ofSize: 22, weight: .heavy)
-        rightNameChallengeLabel.numberOfLines = 0
-        rightNameChallengeLabel.lineBreakMode = .byWordWrapping
     }
     
 }
