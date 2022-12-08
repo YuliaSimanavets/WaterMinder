@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA602126293E5CDA006FFCB1 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */; };
 		CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7C293E418900FF1C3E /* AppDelegate.swift */; };
 		CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */; };
-		CAB83A81293E418900FF1C3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A80293E418900FF1C3E /* ViewController.swift */; };
-		CAB83A84293E418900FF1C3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB83A82293E418900FF1C3E /* Main.storyboard */; };
+		CAB83A81293E418900FF1C3E /* WaterMinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A80293E418900FF1C3E /* WaterMinderViewController.swift */; };
 		CAB83A86293E418A00FF1C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAB83A85293E418A00FF1C3E /* Assets.xcassets */; };
 		CAB83A89293E418A00FF1C3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB83A87293E418A00FF1C3E /* LaunchScreen.storyboard */; };
 		CAB83A94293E418B00FF1C3E /* WaterMinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A93293E418B00FF1C3E /* WaterMinderTests.swift */; };
 		CAB83A9E293E418B00FF1C3E /* WaterMinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A9D293E418B00FF1C3E /* WaterMinderUITests.swift */; };
 		CAB83AA0293E418B00FF1C3E /* WaterMinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A9F293E418B00FF1C3E /* WaterMinderUITestsLaunchTests.swift */; };
+		CAB83AAF293E422B00FF1C3E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AAE293E422B00FF1C3E /* SettingsViewController.swift */; };
+		CAB83AB1293E423E00FF1C3E /* HandbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AB0293E423E00FF1C3E /* HandbookViewController.swift */; };
+		CAB83AB3293E424900FF1C3E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AB2293E424900FF1C3E /* HistoryViewController.swift */; };
+		CAB83AB5293E425400FF1C3E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AB4293E425400FF1C3E /* AccountViewController.swift */; };
+		CAB83AC1293E4BB400FF1C3E /* HandbookChallengesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AC0293E4BB400FF1C3E /* HandbookChallengesViewCell.swift */; };
+		CAB83AC3293E4BCC00FF1C3E /* HandbookHeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AC2293E4BCC00FF1C3E /* HandbookHeaderCollection.swift */; };
+		CABBA3E32940D2E000B26EE4 /* HandbookHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBA3E22940D2E000B26EE4 /* HandbookHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		CAB83A79293E418900FF1C3E /* WaterMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB83A7C293E418900FF1C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CAB83A80293E418900FF1C3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CAB83A83293E418900FF1C3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CAB83A80293E418900FF1C3E /* WaterMinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMinderViewController.swift; sourceTree = "<group>"; };
 		CAB83A85293E418A00FF1C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAB83A88293E418A00FF1C3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAB83A8A293E418A00FF1C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +56,13 @@
 		CAB83A99293E418B00FF1C3E /* WaterMinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterMinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB83A9D293E418B00FF1C3E /* WaterMinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMinderUITests.swift; sourceTree = "<group>"; };
 		CAB83A9F293E418B00FF1C3E /* WaterMinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CAB83AAE293E422B00FF1C3E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CAB83AB0293E423E00FF1C3E /* HandbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookViewController.swift; sourceTree = "<group>"; };
+		CAB83AB2293E424900FF1C3E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		CAB83AB4293E425400FF1C3E /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		CAB83AC0293E4BB400FF1C3E /* HandbookChallengesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookChallengesViewCell.swift; sourceTree = "<group>"; };
+		CAB83AC2293E4BCC00FF1C3E /* HandbookHeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookHeaderCollection.swift; sourceTree = "<group>"; };
+		CABBA3E22940D2E000B26EE4 /* HandbookHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA602124293E59A4006FFCB1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CA602127293E63B6006FFCB1 /* Handbook */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83AB0293E423E00FF1C3E /* HandbookViewController.swift */,
+				CAB83ABE293E4B7000FF1C3E /* Cell */,
+				CAB83ABF293E4B7400FF1C3E /* Header */,
+			);
+			path = Handbook;
+			sourceTree = "<group>";
+		};
+		CA602128293E63D4006FFCB1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83AAE293E422B00FF1C3E /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CA602129293E63DC006FFCB1 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83AB2293E424900FF1C3E /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		CA60212A293E63FF006FFCB1 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83AB4293E425400FF1C3E /* AccountViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		CAB83A70293E418900FF1C3E = {
 			isa = PBXGroup;
 			children = (
@@ -101,8 +157,12 @@
 			children = (
 				CAB83A7C293E418900FF1C3E /* AppDelegate.swift */,
 				CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */,
-				CAB83A80293E418900FF1C3E /* ViewController.swift */,
-				CAB83A82293E418900FF1C3E /* Main.storyboard */,
+				CA602124293E59A4006FFCB1 /* Main */,
+				CAB83AAD293E41F500FF1C3E /* WaterMinder */,
+				CA602129293E63DC006FFCB1 /* History */,
+				CA60212A293E63FF006FFCB1 /* Account */,
+				CA602127293E63B6006FFCB1 /* Handbook */,
+				CA602128293E63D4006FFCB1 /* Settings */,
 				CAB83A85293E418A00FF1C3E /* Assets.xcassets */,
 				CAB83A87293E418A00FF1C3E /* LaunchScreen.storyboard */,
 				CAB83A8A293E418A00FF1C3E /* Info.plist */,
@@ -125,6 +185,31 @@
 				CAB83A9F293E418B00FF1C3E /* WaterMinderUITestsLaunchTests.swift */,
 			);
 			path = WaterMinderUITests;
+			sourceTree = "<group>";
+		};
+		CAB83AAD293E41F500FF1C3E /* WaterMinder */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83A80293E418900FF1C3E /* WaterMinderViewController.swift */,
+			);
+			path = WaterMinder;
+			sourceTree = "<group>";
+		};
+		CAB83ABE293E4B7000FF1C3E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83AC0293E4BB400FF1C3E /* HandbookChallengesViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CAB83ABF293E4B7400FF1C3E /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CAB83AC2293E4BCC00FF1C3E /* HandbookHeaderCollection.swift */,
+				CABBA3E22940D2E000B26EE4 /* HandbookHeaderView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +318,6 @@
 			files = (
 				CAB83A89293E418A00FF1C3E /* LaunchScreen.storyboard in Resources */,
 				CAB83A86293E418A00FF1C3E /* Assets.xcassets in Resources */,
-				CAB83A84293E418900FF1C3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +342,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAB83A81293E418900FF1C3E /* ViewController.swift in Sources */,
+				CAB83AC3293E4BCC00FF1C3E /* HandbookHeaderCollection.swift in Sources */,
+				CAB83A81293E418900FF1C3E /* WaterMinderViewController.swift in Sources */,
+				CA602126293E5CDA006FFCB1 /* CustomTabBarController.swift in Sources */,
 				CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */,
+				CAB83AB5293E425400FF1C3E /* AccountViewController.swift in Sources */,
+				CABBA3E32940D2E000B26EE4 /* HandbookHeaderView.swift in Sources */,
 				CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */,
+				CAB83AC1293E4BB400FF1C3E /* HandbookChallengesViewCell.swift in Sources */,
+				CAB83AB3293E424900FF1C3E /* HistoryViewController.swift in Sources */,
+				CAB83AB1293E423E00FF1C3E /* HandbookViewController.swift in Sources */,
+				CAB83AAF293E422B00FF1C3E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +389,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CAB83A82293E418900FF1C3E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CAB83A83293E418900FF1C3E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CAB83A87293E418A00FF1C3E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +526,6 @@
 				INFOPLIST_FILE = WaterMinder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +553,6 @@
 				INFOPLIST_FILE = WaterMinder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
