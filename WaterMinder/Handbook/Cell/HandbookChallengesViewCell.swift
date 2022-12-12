@@ -21,7 +21,7 @@ struct ChallengesViewModel {
     let backgroundColor: UIColor
 }
 
-class HandbookChallengesViewCell: UICollectionViewCell {
+class HandbookChallengesViewCell: BaseCollectionViewCell {
     
     static var identifier: String {
         return String(describing: HandbookChallengesViewCell.self)
@@ -64,22 +64,9 @@ class HandbookChallengesViewCell: UICollectionViewCell {
         challengeLable.textColor = .white
         return challengeLable
     }()
-   
-    init() {
-        super.init(frame: .zero)
-        setupView()
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
     
-    private func setupView() {
+    override func setupView() {
+        super.setupView()
         
         contentView.layer.cornerRadius = 20
         

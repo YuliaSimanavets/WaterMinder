@@ -7,15 +7,16 @@
 
 import UIKit
 
-struct SettingsTitleViewModel {
+struct SettingsHeaderTitleViewModel {
     let titleText: String
     let addText: String
 }
 
-class SettingsTitleViewCell: UICollectionViewCell {
+class SettingsHeaderTitleViewCell: UICollectionViewCell {
+//    UICollectionReusableView {
     
     static var identifier: String {
-        return String(describing: SettingsTitleViewCell.self)
+        return String(describing: SettingsHeaderTitleViewCell.self)
     }
     
     let titleLabel: UILabel = {
@@ -28,10 +29,12 @@ class SettingsTitleViewCell: UICollectionViewCell {
     let aditionalLabel: UILabel = {
         let additionalLabel = UILabel()
         additionalLabel.font = .systemFont(ofSize: 16)
-        additionalLabel.textColor = .black
+        additionalLabel.textColor = .darkGray
         return additionalLabel
     }()
-        
+    
+    private let generalIndents = CGFloat(20)
+    
     init() {
         super.init(frame: .zero)
         setupView()
@@ -47,28 +50,27 @@ class SettingsTitleViewCell: UICollectionViewCell {
     }
     
     private func setupView() {
-            
-        contentView.backgroundColor = .gray
-
-        contentView.addSubview(titleLabel)
+    
+        addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        contentView.addSubview(aditionalLabel)
+        addSubview(aditionalLabel)
         aditionalLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -5),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            aditionalLabel.topAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 5),
+            aditionalLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             aditionalLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             aditionalLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ])
     }
  
-    func set(_ data: SettingsTitleViewModel) {
+    func set(_ data: SettingsHeaderTitleViewModel) {
         
         titleLabel.text = data.titleText
         aditionalLabel.text = data.addText
-    }}
+    }
+}

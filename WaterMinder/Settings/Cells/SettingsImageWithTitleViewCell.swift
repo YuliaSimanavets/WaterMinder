@@ -10,6 +10,8 @@ import UIKit
 struct SettingsImageWithTitleViewModel {
     let nearTitleImage: UIImage?
     let title: String
+    let showSwitch: Bool
+    let switchValue: Bool
 }
 
 class SettingsImageWithTitleViewCell: UICollectionViewCell {
@@ -18,14 +20,29 @@ class SettingsImageWithTitleViewCell: UICollectionViewCell {
         return String(describing: SettingsImageWithTitleViewCell.self)
     }
     
+    private let generalIndents = CGFloat(15)
+    
     private let titleLabel: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.font = .systemFont(ofSize: 14, weight: .heavy)
+        titleLabel.font = .systemFont(ofSize: 18, weight: .heavy)
         titleLabel.textColor = .black
         return titleLabel
     }()
     
-    private let nearTitleImage = UIImageView()
+    private let nearTitleImageView = UIImageView()
+        
+    private var mySwitch: UISwitch = {
+        let mySwitch = UISwitch()
+        mySwitch.onTintColor = .systemBlue
+        return mySwitch
+    }()
+    
+    private let disclosureIndicator: UIImageView = {
+        let disclosureIndicator = UIImageView()
+        disclosureIndicator.image = UIImage(systemName: "chevron.right")
+        disclosureIndicator.tintColor = .white
+        return disclosureIndicator
+    }()
     
     init() {
         super.init(frame: .zero)
@@ -42,32 +59,51 @@ class SettingsImageWithTitleViewCell: UICollectionViewCell {
     }
     
     func setupView() {
+//        super.setupView()
         
         contentView.backgroundColor = .gray
         
         contentView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        contentView.addSubview(nearTitleImage)
-        nearTitleImage.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(nearTitleImageView)
+        nearTitleImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(mySwitch)
+        mySwitch.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(disclosureIndicator)
+        disclosureIndicator.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            nearTitleImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            nearTitleImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            nearTitleImage.heightAnchor.constraint(equalToConstant: 40),
-            nearTitleImage.widthAnchor.constraint(equalToConstant: 40),
+            nearTitleImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            nearTitleImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: generalIndents),
+            nearTitleImageView.heightAnchor.constraint(equalToConstant: 40),
+            nearTitleImageView.widthAnchor.constraint(equalToConstant: 40),
             
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: nearTitleImage.trailingAnchor, constant: 15),
+            titleLabel.leadingAnchor.constraint(equalTo: nearTitleImageView.trailingAnchor, constant: generalIndents),
             titleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.centerXAnchor, constant: 10),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 10)
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 10),
+            
+            mySwitch.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            mySwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -generalIndents),
+            
+            disclosureIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            disclosureIndicator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -generalIndents)
        ])
     }
     
-    func set(_ dataImageWithTitle: SettingsImageWithTitleViewModel) {
+    func set(_ data: SettingsImageWithTitleViewModel) {
         
-        titleLabel.text = dataImageWithTitle.title
-        nearTitleImage.image = dataImageWithTitle.nearTitleImage
-        nearTitleImage.tintColor = .systemCyan
+        titleLabel.text = data.title
+        nearTitleImageView.image = data.nearTitleImage
+        nearTitleImageView.tintColor = .systemCyan
+        
+        mySwitch.isOn = data.switchValue
+        
+        mySwitch.isHidden = !data.showSwitch
+        disclosureIndicator.isHidden = data.showSwitch
+        
     }
 }
