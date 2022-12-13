@@ -59,12 +59,12 @@ class SettingsHeaderTitleViewCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             
             aditionalLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-            aditionalLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            aditionalLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+            aditionalLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            aditionalLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
         ])
     }
  

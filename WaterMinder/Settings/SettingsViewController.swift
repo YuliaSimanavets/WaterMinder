@@ -42,7 +42,6 @@ class SettingsViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         view.backgroundColor = .lightGray
         navigationItem.title = "Settings"
         
@@ -135,31 +134,31 @@ class SettingsViewController: UIViewController,
 
         let item = arrayHeader[indexPath.section][indexPath.item]
         
-            switch item {
-            case let .cups(model):
-                if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                                                withReuseIdentifier: SettingsHeaderTitleViewCell.identifier,
-                                                                                for: indexPath) as? SettingsHeaderTitleViewCell {
-                    header.set(model)
-                    return header
-                }
-            case let .appearance(model):
-                if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                                                withReuseIdentifier: SettingsHeaderTitleViewCell.identifier,
-                                                                                for: indexPath) as? SettingsHeaderTitleViewCell {
-                    header.set(model)
-                    return header
-                }
-            case let .general(model):
-                if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                                                withReuseIdentifier: SettingsHeaderTitleViewCell.identifier,
-                                                                                for: indexPath) as? SettingsHeaderTitleViewCell {
-                    header.set(model)
-                    return header
-                }
-            default:
-                break
+        switch item {
+        case let .cups(model):
+            if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                            withReuseIdentifier: SettingsHeaderTitleViewCell.identifier,
+                                                                            for: indexPath) as? SettingsHeaderTitleViewCell {
+                header.set(model)
+                return header
             }
+        case let .appearance(model):
+            if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                            withReuseIdentifier: SettingsHeaderTitleViewCell.identifier,
+                                                                            for: indexPath) as? SettingsHeaderTitleViewCell {
+                header.set(model)
+                return header
+            }
+        case let .general(model):
+            if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                            withReuseIdentifier: SettingsHeaderTitleViewCell.identifier,
+                                                                            for: indexPath) as? SettingsHeaderTitleViewCell {
+                header.set(model)
+                return header
+            }
+        default:
+            break
+        }
         return UICollectionReusableView()
     }
 

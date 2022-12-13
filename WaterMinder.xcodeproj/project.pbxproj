@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		CA4B8D81294359A400B22E4B /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B8D80294359A400B22E4B /* BaseCollectionViewCell.swift */; };
 		CA4B8D8329435C1A00B22E4B /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B8D8229435C1A00B22E4B /* SettingsModel.swift */; };
+		CA50D0212947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50D0202947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift */; };
+		CA50D0232947C40100A876EC /* HorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50D0222947C40100A876EC /* HorizontalCollectionViewCell.swift */; };
 		CA602126293E5CDA006FFCB1 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */; };
+		CAA130542948B48A00A05359 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA130532948B48A00A05359 /* HistoryCollectionViewCell.swift */; };
+		CAA130582948B4EF00A05359 /* HistoryHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA130572948B4EF00A05359 /* HistoryHeaderCollectionView.swift */; };
 		CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7C293E418900FF1C3E /* AppDelegate.swift */; };
 		CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */; };
 		CAB83A81293E418900FF1C3E /* WaterMinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A80293E418900FF1C3E /* WaterMinderViewController.swift */; };
@@ -49,7 +53,11 @@
 /* Begin PBXFileReference section */
 		CA4B8D80294359A400B22E4B /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA4B8D8229435C1A00B22E4B /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		CA50D0202947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
+		CA50D0222947C40100A876EC /* HorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		CAA130532948B48A00A05359 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		CAA130572948B4EF00A05359 /* HistoryHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderCollectionView.swift; sourceTree = "<group>"; };
 		CAB83A79293E418900FF1C3E /* WaterMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB83A7C293E418900FF1C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +114,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CA50D0242947C42600A876EC /* HorizontalCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CA50D0202947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift */,
+				CA50D0252947C45700A876EC /* Cells */,
+			);
+			path = HorizontalCollectionView;
+			sourceTree = "<group>";
+		};
+		CA50D0252947C45700A876EC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CA50D0222947C40100A876EC /* HorizontalCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CA602124293E59A4006FFCB1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				CAB83AB2293E424900FF1C3E /* HistoryViewController.swift */,
+				CAA130552948B48F00A05359 /* Cell */,
+				CAA130562948B4BA00A05359 /* Header */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -158,6 +185,22 @@
 				CABBA3F32941117E00B26EE4 /* SettingsHeaderTitleViewCell.swift */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		CAA130552948B48F00A05359 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CAA130532948B48A00A05359 /* HistoryCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CAA130562948B4BA00A05359 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CAA130572948B4EF00A05359 /* HistoryHeaderCollectionView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		CAB83A70293E418900FF1C3E = {
@@ -244,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				CABBA3F62941119600B26EE4 /* SettingsImageWithTitleViewCell.swift */,
+				CA50D0242947C42600A876EC /* HorizontalCollectionView */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -380,15 +424,19 @@
 			files = (
 				CABBA3F42941117E00B26EE4 /* SettingsHeaderTitleViewCell.swift in Sources */,
 				CA4B8D81294359A400B22E4B /* BaseCollectionViewCell.swift in Sources */,
+				CAA130542948B48A00A05359 /* HistoryCollectionViewCell.swift in Sources */,
 				CAB83AC3293E4BCC00FF1C3E /* HandbookHeaderCollection.swift in Sources */,
 				CAB83A81293E418900FF1C3E /* WaterMinderViewController.swift in Sources */,
 				CA602126293E5CDA006FFCB1 /* CustomTabBarController.swift in Sources */,
 				CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */,
 				CA4B8D8329435C1A00B22E4B /* SettingsModel.swift in Sources */,
+				CA50D0232947C40100A876EC /* HorizontalCollectionViewCell.swift in Sources */,
+				CA50D0212947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift in Sources */,
 				CABBA3F72941119600B26EE4 /* SettingsImageWithTitleViewCell.swift in Sources */,
 				CAB83AB5293E425400FF1C3E /* AccountViewController.swift in Sources */,
 				CABBA3E32940D2E000B26EE4 /* HandbookHeaderView.swift in Sources */,
 				CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */,
+				CAA130582948B4EF00A05359 /* HistoryHeaderCollectionView.swift in Sources */,
 				CAB83AC1293E4BB400FF1C3E /* HandbookChallengesViewCell.swift in Sources */,
 				CAB83AB3293E424900FF1C3E /* HistoryViewController.swift in Sources */,
 				CAB83AB1293E423E00FF1C3E /* HandbookViewController.swift in Sources */,
