@@ -11,7 +11,7 @@ struct SettingsHorizontalCollectionViewModel {
     
 }
 
-class SettingsHorizontalCollectionViewCell: BaseCollectionViewCell,
+class SettingsHorizontalCollectionViewCell: BaseCollectionView,
                                             UICollectionViewDelegate,
                                             UICollectionViewDataSource,
                                             UICollectionViewDelegateFlowLayout {

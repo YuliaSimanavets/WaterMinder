@@ -12,7 +12,7 @@ struct HorizontalCollectionViewModel {
     let liquidText: String
 }
 
-class HorizontalCollectionViewCell: BaseCollectionViewCell {
+class HorizontalCollectionViewCell: BaseCollectionView {
     
     static var identifier: String {
         return String(describing: HorizontalCollectionViewCell.self)

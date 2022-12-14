@@ -12,6 +12,23 @@ class HistoryViewController: UIViewController,
                              UICollectionViewDataSource,
                              UICollectionViewDelegateFlowLayout {
 
+    private let historyLabel: UILabel = {
+        let history = UILabel()
+        history.text = "History"
+        history.font = .systemFont(ofSize: 30, weight: .heavy)
+        history.textColor = .black
+        return history
+    }()
+    
+    private var historySegmentedControl: UISegmentedControl = {
+        let segmented = UISegmentedControl()
+        segmented.backgroundColor = .white
+        segmented.selectedSegmentTintColor = .systemBlue
+        segmented.tintColor = .white
+        return segmented
+    }()
+    
+
     private let historyCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -21,37 +38,82 @@ class HistoryViewController: UIViewController,
         return collection
     }()
     
+    let arrayWithLogs = [
+        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "apple.logo"), liquidTypeText: "Water"),
+        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "apple.logo"), liquidTypeText: "Water"),
+        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "apple.logo"), liquidTypeText: "Water"),
+        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "apple.logo"), liquidTypeText: "Water")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .lightGray
-        view.addSubview(historyCollectionView)
         
+        view.addSubview(historyLabel)
+        historyLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(historySegmentedControl)
+        historySegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        historySegmentedControl.addTarget(self, action: #selector(segmentControllerTaped), for: .valueChanged)
+        
+        historySegmentedControl.insertSegment(withTitle: "D", at: 0, animated: true)
+        historySegmentedControl.insertSegment(withTitle: "W", at: 1, animated: true)
+        historySegmentedControl.insertSegment(withTitle: "M", at: 2, animated: true)
+        historySegmentedControl.insertSegment(withTitle: "Y", at: 3, animated: true)
+        
+        view.addSubview(historyCollectionView)
         historyCollectionView.dataSource = self
         historyCollectionView.delegate = self
         
         historyCollectionView.register(HistoryCollectionViewCell.self,
                                        forCellWithReuseIdentifier: HistoryCollectionViewCell.identifier)
-        historyCollectionView.register(HistoryHeaderViewCell.self,
-                                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                       withReuseIdentifier: HistoryHeaderViewCell.identifier)
         
         NSLayoutConstraint.activate([
-            historyCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            historyLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            historyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            historyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            historySegmentedControl.topAnchor.constraint(equalTo: historyLabel.bottomAnchor, constant: 15),
+            historySegmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            historySegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            historySegmentedControl.heightAnchor.constraint(equalToConstant: 30),
+            
+            historyCollectionView.topAnchor.constraint(equalTo: historySegmentedControl.bottomAnchor, constant: 30),
             historyCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             historyCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             historyCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
+    @objc
+    func segmentControllerTaped(_ parametr: UISegmentedControl) {
+        
+        switch parametr.selectedSegmentIndex {
+        case 0:
+            print("1")
+        case 1:
+            print("2")
+        case 2:
+            print("3")
+        case 3:
+            print("4")
+        default:
+            break
+        }
+    }
+  
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return arrayWithLogs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
             
+            cell.set(arrayWithLogs[indexPath.item])
             
             return cell
         }
@@ -64,25 +126,5 @@ class HistoryViewController: UIViewController,
         let heightCell = CGFloat(50)
         return CGSize(width: widthCell, height: heightCell)
     }
-        
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                                        withReuseIdentifier: HistoryHeaderViewCell.identifier,
-                                                                        for: indexPath) as? HistoryHeaderViewCell {
-            
-            header.set(HistoryHeaderViewModel(textHistory: "History",
-                                              firstSegmentedControl: "D",
-                                              secondSegmentedControl: "W",
-                                              thirdSegmentedControl: "M",
-                                              forthSegmentedControl: "Y"))
-            
-            return header
-        }
-        return UICollectionReusableView()
-    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 200)
-    }
 }

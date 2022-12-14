@@ -21,7 +21,7 @@ struct ChallengesViewModel {
     let backgroundColor: UIColor
 }
 
-class HandbookChallengesViewCell: BaseCollectionViewCell {
+class HandbookChallengesViewCell: BaseCollectionView {
     
     static var identifier: String {
         return String(describing: HandbookChallengesViewCell.self)

@@ -12,13 +12,17 @@ struct HistoryCollectionViewModel {
     let liquidTypeText: String
 }
 
-class HistoryCollectionViewCell: BaseCollectionViewCell {
+class HistoryCollectionViewCell: BaseCollectionView {
     
     static var identifier: String {
         return String(describing: HistoryCollectionViewCell.self)
     }
     
-    private let liquidImageView = UIImageView()
+    private let liquidImageView: UIImageView = {
+        let liquidImage = UIImageView()
+        liquidImage.contentMode = .scaleAspectFit
+        return liquidImage
+    }()
     private let liquidTypeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
@@ -26,14 +30,28 @@ class HistoryCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
     
+//
+    private let myDate: DateFormatter = {
+        let date = DateFormatter()
+        date.dateStyle = .short
+        date.dateFormat = .none
+        let todayDate = Data()
+        date.locale = Locale(identifier: "pl_PL")
+        return date
+    }()
+//
+    
     override func setupView() {
         super.setupView()
+        
+        backgroundColor = .orange
         
         addSubview(liquidImageView)
         liquidImageView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(liquidTypeLabel)
         liquidTypeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([
             liquidImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -43,7 +61,9 @@ class HistoryCollectionViewCell: BaseCollectionViewCell {
             
             liquidTypeLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             liquidTypeLabel.leadingAnchor.constraint(equalTo: liquidImageView.trailingAnchor, constant: 15),
-            liquidTypeLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -10)
+            liquidTypeLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -10),
+            
+            
         ])
     }
     

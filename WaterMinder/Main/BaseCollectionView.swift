@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseCollectionViewCell: UICollectionViewCell {
+class BaseCollectionView: UICollectionViewCell {
     
     init() {
         super.init(frame: .zero)
