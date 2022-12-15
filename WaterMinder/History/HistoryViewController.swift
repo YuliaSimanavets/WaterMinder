@@ -37,13 +37,12 @@ class HistoryViewController: UIViewController,
         layout.scrollDirection = .vertical
         return collection
     }()
+//
+//    private let waterLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Water")
+//    private let coffeeLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Coffee")
+//    private let teaLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea")
     
-    let arrayWithLogs = [
-        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "apple.logo"), liquidTypeText: "Water"),
-        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "apple.logo"), liquidTypeText: "Water"),
-        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "apple.logo"), liquidTypeText: "Water"),
-        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "apple.logo"), liquidTypeText: "Water")
-    ]
+    let arrayWithLogs = [LiquidTypeModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,11 +110,24 @@ class HistoryViewController: UIViewController,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
-            
-            cell.set(arrayWithLogs[indexPath.item])
-            
-            return cell
+        let item = arrayWithLogs[indexPath.item]
+        
+        switch item {
+        case let .water(model):
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
+                cell.set(model)
+                return cell
+            }
+        case let .coffe(model):
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
+                cell.set(model)
+                return cell
+            }
+        case let .tea(model):
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
+                cell.set(model)
+                return cell
+            }
         }
         return UICollectionViewCell()
     }

@@ -13,30 +13,37 @@ class WaterMinderViewController: UIViewController {
     private let coffeeLiquid = LiqiudTypeView()
     private let teaLiquid = LiqiudTypeView()
     
+    private let waterLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Water")
+    private let coffeeLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Coffee")
+    private let teaLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemGray3
 
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+        let waterGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(waterTapAction))
         view.addSubview(waterLiquid)
         waterLiquid.translatesAutoresizingMaskIntoConstraints = false
         waterLiquid.set(LiqiudTypeViewModel(liquidImage: UIImage(named: "water"), liquidText: "Water"))
-        waterLiquid.addGestureRecognizer(gestureRecognizer)
+        waterLiquid.addGestureRecognizer(waterGestureRecognizer)
         waterLiquid.isUserInteractionEnabled = true
        
+        let coffeeGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(coffeeTapAction))
         view.addSubview(coffeeLiquid)
         coffeeLiquid.translatesAutoresizingMaskIntoConstraints = false
         coffeeLiquid.set(LiqiudTypeViewModel(liquidImage: UIImage(named: "coffee"), liquidText: "Coffe"))
-        coffeeLiquid.addGestureRecognizer(gestureRecognizer)
+        coffeeLiquid.addGestureRecognizer(coffeeGestureRecognizer)
         coffeeLiquid.isUserInteractionEnabled = true
         
+        let teaGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(teaTapAction))
         view.addSubview(teaLiquid)
         teaLiquid.translatesAutoresizingMaskIntoConstraints = false
         teaLiquid.set(LiqiudTypeViewModel(liquidImage: UIImage(named: "tea"), liquidText: "Tea"))
-        teaLiquid.addGestureRecognizer(gestureRecognizer)
+        teaLiquid.addGestureRecognizer(teaGestureRecognizer)
         teaLiquid.isUserInteractionEnabled = true
 
+        
         let plusButton = UIImageView(image: UIImage(systemName: "plus.circle")?.withRenderingMode(.alwaysTemplate))
         plusButton.tintColor = .orange
         plusButton.translatesAutoresizingMaskIntoConstraints = false
@@ -74,12 +81,24 @@ class WaterMinderViewController: UIViewController {
     }
  
     @objc
-    func tapAction() {
-        let historyVC = HistoryViewController()
-        historyVC.modalPresentationStyle = .automatic
-        present(historyVC, animated: true)
+    func waterTapAction(_ tapButton: UIButton) {
         
-//        navigationController?.pushViewController(historyVC, animated: true)
+        addData(.water(waterLiquidType))
+        print("water")
+    }
+    
+    @objc
+    func coffeeTapAction() {
+
+        addData(.coffe(coffeeLiquidType))
+        print("coffee")
+    }
+    
+    @objc
+    func teaTapAction() {
+        
+        addData(.tea(teaLiquidType))
+        print("tea")
     }
     
 }

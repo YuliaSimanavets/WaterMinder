@@ -30,16 +30,17 @@ class HistoryCollectionViewCell: BaseCollectionView {
         return label
     }()
     
-//
-    private let myDate: DateFormatter = {
-        let date = DateFormatter()
-        date.dateStyle = .short
-        date.dateFormat = .none
-        let todayDate = Data()
-        date.locale = Locale(identifier: "pl_PL")
-        return date
-    }()
-//
+//    private let myDate1 = NSDate()
+////
+//    private let myDate: DateFormatter = {
+//        let date = DateFormatter()
+//        date.dateStyle = .short
+//        date.dateFormat = .none
+//        let todayDate = Data()
+//        date.locale = Locale(identifier: "pl_PL")
+//        return date
+//    }()
+////
     
     override func setupView() {
         super.setupView()
@@ -51,7 +52,6 @@ class HistoryCollectionViewCell: BaseCollectionView {
         
         addSubview(liquidTypeLabel)
         liquidTypeLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         
         NSLayoutConstraint.activate([
             liquidImageView.centerYAnchor.constraint(equalTo: centerYAnchor),

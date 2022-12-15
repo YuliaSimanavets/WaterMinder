@@ -12,7 +12,7 @@ struct LiqiudTypeViewModel {
     let liquidText: String
 }
 
-class LiqiudTypeView: BaseCollectionView {
+class LiqiudTypeView: UIView {
 
     private let liquidImageView: UIImageView = {
         let liquidImage = UIImageView()
@@ -29,12 +29,24 @@ class LiqiudTypeView: BaseCollectionView {
     
     let today = Data()
     
-    override func setupView() {
-        super.setupView()
+    init() {
+        super.init(frame: .zero)
+        setupView()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    func setupView() {
         
-        backgroundColor = .lightGray
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = 20
+        backgroundColor = .lightGray
+        layer.cornerRadius = 10
         
         addSubview(liquidImageView)
         addSubview(liquidLabel)
