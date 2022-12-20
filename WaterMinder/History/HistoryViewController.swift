@@ -11,7 +11,9 @@ class HistoryViewController: UIViewController,
                              UICollectionViewDelegate,
                              UICollectionViewDataSource,
                              UICollectionViewDelegateFlowLayout {
-
+  
+    var dataManager: DataManager?
+    
     private let historyLabel: UILabel = {
         let history = UILabel()
         history.text = "History"
@@ -28,7 +30,6 @@ class HistoryViewController: UIViewController,
         return segmented
     }()
     
-
     private let historyCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -37,12 +38,16 @@ class HistoryViewController: UIViewController,
         layout.scrollDirection = .vertical
         return collection
     }()
-//
-//    private let waterLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Water")
-//    private let coffeeLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Coffee")
-//    private let teaLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea")
+   
+    private let waterLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Water")
+    private let coffeeLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Coffee")
+    private let teaLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea")
     
-    let arrayWithLogs = [LiquidTypeModel]()
+    private let liquidTypes = [
+        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Water"),
+        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Coffee"),
+        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +59,7 @@ class HistoryViewController: UIViewController,
 
         view.addSubview(historySegmentedControl)
         historySegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        historySegmentedControl.addTarget(self, action: #selector(segmentControllerTaped), for: .valueChanged)
+        historySegmentedControl.addTarget(self, action: #selector(segmentControllerTapped), for: .valueChanged)
         
         historySegmentedControl.insertSegment(withTitle: "D", at: 0, animated: true)
         historySegmentedControl.insertSegment(withTitle: "W", at: 1, animated: true)
@@ -84,48 +89,32 @@ class HistoryViewController: UIViewController,
             historyCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
-    @objc
-    func segmentControllerTaped(_ parametr: UISegmentedControl) {
-        
-        switch parametr.selectedSegmentIndex {
-        case 0:
-            print("1")
-        case 1:
-            print("2")
-        case 2:
-            print("3")
-        case 3:
-            print("4")
-        default:
-            break
-        }
-    }
-  
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayWithLogs.count
+        return dataManager?.getData().count ?? 0
     }
+    
+    
+    
+//    как только я переключаюсь с HistoryViewController на WaterMinderViewController и добавляю новые логи - новые логи перестают отображатся
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let item = arrayWithLogs[indexPath.item]
-        
-        switch item {
-        case let .water(model):
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
-                cell.set(model)
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
+            
+            let item = dataManager?.getData()[indexPath.item]
+            
+            switch item?.type {
+            case .water:
+                cell.set(liquidTypes[0])
                 return cell
-            }
-        case let .coffe(model):
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
-                cell.set(model)
+            case .coffee:
+                cell.set(liquidTypes[1])
                 return cell
-            }
-        case let .tea(model):
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
-                cell.set(model)
+            case .tea:
+                cell.set(liquidTypes[2])
+                return cell
+            case .none:
                 return cell
             }
         }
@@ -138,5 +127,25 @@ class HistoryViewController: UIViewController,
         let heightCell = CGFloat(50)
         return CGSize(width: widthCell, height: heightCell)
     }
+        
+    func setDataManager(_ data: DataManager) {
+        dataManager = data
+    }
     
+    @objc
+    func segmentControllerTapped(_ parameter: UISegmentedControl) {
+        
+        switch parameter.selectedSegmentIndex {
+        case 0:
+            print("1")
+        case 1:
+            print("2")
+        case 2:
+            print("3")
+        case 3:
+            print("4")
+        default:
+            break
+        }
+    }
 }

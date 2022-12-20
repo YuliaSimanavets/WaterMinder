@@ -6,11 +6,17 @@
 //
 
 import Foundation
+import UIKit
 
-enum LiquidTypeModel {
+enum LiquidType {
     
-    case water(HistoryCollectionViewModel)
-    case coffe(HistoryCollectionViewModel)
-    case tea(HistoryCollectionViewModel)
+    case water
+    case coffee
+    case tea
+}
+
+struct LiquidModel {
     
+    let date: Date
+    let type: LiquidType
 }

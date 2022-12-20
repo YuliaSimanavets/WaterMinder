@@ -21,26 +21,23 @@ class HistoryCollectionViewCell: BaseCollectionView {
     private let liquidImageView: UIImageView = {
         let liquidImage = UIImageView()
         liquidImage.contentMode = .scaleAspectFit
+        liquidImage.tintColor = .white
         return liquidImage
     }()
     private let liquidTypeLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
-        label.textColor = .black
+        label.font = .systemFont(ofSize: 16)
+        label.textColor = .white
         return label
     }()
+
+    private let dateFormatter: DateFormatter = {
+        let date = DateFormatter()
+        date.dateFormat = "MMM d, h:mm a"
+        return date
+    }()
     
-//    private let myDate1 = NSDate()
-////
-//    private let myDate: DateFormatter = {
-//        let date = DateFormatter()
-//        date.dateStyle = .short
-//        date.dateFormat = .none
-//        let todayDate = Data()
-//        date.locale = Locale(identifier: "pl_PL")
-//        return date
-//    }()
-////
+    private let timeLabel = UILabel()
     
     override func setupView() {
         super.setupView()
@@ -53,22 +50,31 @@ class HistoryCollectionViewCell: BaseCollectionView {
         addSubview(liquidTypeLabel)
         liquidTypeLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        addSubview(timeLabel)
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             liquidImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             liquidImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             liquidImageView.widthAnchor.constraint(equalToConstant: 40),
             liquidImageView.heightAnchor.constraint(equalToConstant: 40),
             
-            liquidTypeLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            liquidTypeLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10),
             liquidTypeLabel.leadingAnchor.constraint(equalTo: liquidImageView.trailingAnchor, constant: 15),
-            liquidTypeLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -10),
+            liquidTypeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
-            
+            timeLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 10),
+            timeLabel.leadingAnchor.constraint(equalTo: liquidTypeLabel.leadingAnchor),
+            timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ])
     }
     
     func set(_ data: HistoryCollectionViewModel) {
+        
         liquidImageView.image = data.liquidImage
         liquidTypeLabel.text = data.liquidTypeText
+        
+        let dateString = dateFormatter.string(from: Date())
+        timeLabel.text = dateString
     }
 }

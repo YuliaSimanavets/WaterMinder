@@ -7,37 +7,16 @@
 
 import UIKit
 
-extension WaterMinderViewController {
-    
-    func addData(_ data: LiquidTypeModel) {
-        
-// при нажатии кнопки -> добавляется item(LiquidTypeModel) в arrayLogs
-        var arrayLogs = [LiquidTypeModel]()
-        arrayLogs.append(data)
-    }
-}
+class DataManager {
 
-extension HistoryViewController {
-    
-    func getData() {
-    
-    
-    }
-    
-}
+    private var arrayLogs = [LiquidModel]()
 
-//class DataManager {
-//
-//    private var arrayLogs = [LiquidTypeModel]()
-//
-//    func addData(_ data: LiquidTypeModel) {
-//       arrayLogs.append(data)
-//
-//    }
-//
-//    func getData() {
-//
-//
-//    }
-//
-//}
+    func addData(_ data: LiquidModel) {
+       arrayLogs.append(data)
+    }
+
+    func getData() -> [LiquidModel] {
+        return arrayLogs
+    }
+
+}

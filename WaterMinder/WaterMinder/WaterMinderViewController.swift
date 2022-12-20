@@ -13,9 +13,7 @@ class WaterMinderViewController: UIViewController {
     private let coffeeLiquid = LiqiudTypeView()
     private let teaLiquid = LiqiudTypeView()
     
-    private let waterLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Water")
-    private let coffeeLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Coffee")
-    private let teaLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea")
+    var dataManager: DataManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +46,6 @@ class WaterMinderViewController: UIViewController {
         plusButton.tintColor = .orange
         plusButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(plusButton)
-
-//        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction))
-//        plusButton.addGestureRecognizer(gestureRecognizer)
-//        plusButton.isUserInteractionEnabled = true
         
         view.addSubview(plusButton)
         plusButton.translatesAutoresizingMaskIntoConstraints = false
@@ -74,32 +68,34 @@ class WaterMinderViewController: UIViewController {
           
             plusButton.topAnchor.constraint(equalTo: waterLiquid.bottomAnchor, constant: 30),
             plusButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            plusButton.bottomAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             plusButton.widthAnchor.constraint(equalToConstant: 100),
             plusButton.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
- 
+    
+    func setDataManager(_ data: DataManager) {
+        dataManager = data
+    }
+    
     @objc
     func waterTapAction(_ tapButton: UIButton) {
         
-        addData(.water(waterLiquidType))
+        dataManager?.addData(LiquidModel(date: Date(), type: .water))
         print("water")
     }
     
     @objc
     func coffeeTapAction() {
-
-        addData(.coffe(coffeeLiquidType))
+        
+        dataManager?.addData(LiquidModel(date: Date(), type: .coffee))
         print("coffee")
     }
     
     @objc
     func teaTapAction() {
         
-        addData(.tea(teaLiquidType))
+        dataManager?.addData(LiquidModel(date: Date(), type: .tea))
         print("tea")
     }
-    
 }
 
