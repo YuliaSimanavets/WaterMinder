@@ -11,7 +11,7 @@ class HistoryViewController: UIViewController,
                              UICollectionViewDelegate,
                              UICollectionViewDataSource,
                              UICollectionViewDelegateFlowLayout {
-  
+    
     var dataManager: DataManager?
     
     private let historyLabel: UILabel = {
@@ -49,6 +49,12 @@ class HistoryViewController: UIViewController,
         HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea")
     ]
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        historyCollectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,7 +78,10 @@ class HistoryViewController: UIViewController,
         
         historyCollectionView.register(HistoryCollectionViewCell.self,
                                        forCellWithReuseIdentifier: HistoryCollectionViewCell.identifier)
-        
+        historyCollectionView.register(HistoryHeaderCollectionView.self,
+                                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                       withReuseIdentifier: HistoryHeaderCollectionView.identifier)
+                
         NSLayoutConstraint.activate([
             historyLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             historyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -93,17 +102,19 @@ class HistoryViewController: UIViewController,
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataManager?.getData().count ?? 0
     }
-    
-    
+   
+//    func reloadMyData(collectionView: UICollectionView) {
+//        collectionView.reloadData()
+//    }
     
 //    как только я переключаюсь с HistoryViewController на WaterMinderViewController и добавляю новые логи - новые логи перестают отображатся
-    
+ 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
-            
+
             let item = dataManager?.getData()[indexPath.item]
-            
+
             switch item?.type {
             case .water:
                 cell.set(liquidTypes[0])
@@ -126,6 +137,22 @@ class HistoryViewController: UIViewController,
         let widthCell = frame.width - CGFloat(20)
         let heightCell = CGFloat(50)
         return CGSize(width: widthCell, height: heightCell)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                     withReuseIdentifier: HistoryHeaderCollectionView.identifier,
+                                                                     for: indexPath)
+            
+            guard let myHeader = header as? HistoryHeaderCollectionView else { return header }
+            myHeader.set(HistoryHeaderViewModel(historyText: "Today's Logs"))
+            return myHeader
+        }
+        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        return CGSize(width: view.frame.size.width, height: 50)
     }
         
     func setDataManager(_ data: DataManager) {

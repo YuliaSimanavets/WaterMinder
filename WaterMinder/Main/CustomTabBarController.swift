@@ -20,7 +20,7 @@ class CustomTabBarController: UITabBarController {
         
         history.setDataManager(dataManager)
         general.setDataManager(dataManager)
-        
+              
         self.setViewControllers([general, history, handbook, setting], animated: false)
        
         guard let items = tabBar.items else { return }

@@ -16,6 +16,7 @@ class DataManager {
     }
 
     func getData() -> [LiquidModel] {
+        
         return arrayLogs
     }
 

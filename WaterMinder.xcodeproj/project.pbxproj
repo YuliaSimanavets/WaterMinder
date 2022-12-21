@@ -15,6 +15,7 @@
 		CA50D0212947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50D0202947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift */; };
 		CA50D0232947C40100A876EC /* HorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50D0222947C40100A876EC /* HorizontalCollectionViewCell.swift */; };
 		CA602126293E5CDA006FFCB1 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */; };
+		CA8D89E32951EED9007205AC /* HistoryHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8D89E22951EED9007205AC /* HistoryHeaderCollectionView.swift */; };
 		CAA130542948B48A00A05359 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA130532948B48A00A05359 /* HistoryCollectionViewCell.swift */; };
 		CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7C293E418900FF1C3E /* AppDelegate.swift */; };
 		CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */; };
@@ -60,6 +61,7 @@
 		CA50D0202947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA50D0222947C40100A876EC /* HorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		CA8D89E22951EED9007205AC /* HistoryHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderCollectionView.swift; sourceTree = "<group>"; };
 		CAA130532948B48A00A05359 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CAB83A79293E418900FF1C3E /* WaterMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB83A7C293E418900FF1C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */,
 				CA4B8D80294359A400B22E4B /* BaseCollectionView.swift */,
+				CA3F3283294A4CED00FF73AB /* DataManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -176,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB83AB2293E424900FF1C3E /* HistoryViewController.swift */,
-				CA3F3283294A4CED00FF73AB /* DataManager.swift */,
+				CA8D89E42951F24E007205AC /* Header */,
 				CAA130552948B48F00A05359 /* Cell */,
 				CA1B55F8294BB1C200D8093B /* Model */,
 			);
@@ -189,6 +192,14 @@
 				CABBA3F32941117E00B26EE4 /* SettingsHeaderTitleViewCell.swift */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		CA8D89E42951F24E007205AC /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CA8D89E22951EED9007205AC /* HistoryHeaderCollectionView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		CAA130552948B48F00A05359 /* Cell */ = {
@@ -433,6 +444,7 @@
 				CABBA3F72941119600B26EE4 /* SettingsImageWithTitleViewCell.swift in Sources */,
 				CABBA3E32940D2E000B26EE4 /* HandbookHeaderView.swift in Sources */,
 				CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */,
+				CA8D89E32951EED9007205AC /* HistoryHeaderCollectionView.swift in Sources */,
 				CAB83AC1293E4BB400FF1C3E /* HandbookChallengesViewCell.swift in Sources */,
 				CAB83AB3293E424900FF1C3E /* HistoryViewController.swift in Sources */,
 				CA3F3286294A4DA900FF73AB /* LiqiudTypeView.swift in Sources */,
