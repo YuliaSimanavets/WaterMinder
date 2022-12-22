@@ -10,6 +10,7 @@ import UIKit
 struct HistoryCollectionViewModel {
     let liquidImage: UIImage?
     let liquidTypeText: String
+    let loginTime: Date
 }
 
 class HistoryCollectionViewCell: BaseCollectionView {
@@ -37,7 +38,7 @@ class HistoryCollectionViewCell: BaseCollectionView {
         return date
     }()
     
-    private let timeLabel = UILabel()
+    private var timeLabel = UILabel()
     
     override func setupView() {
         super.setupView()
@@ -74,7 +75,7 @@ class HistoryCollectionViewCell: BaseCollectionView {
         liquidImageView.image = data.liquidImage
         liquidTypeLabel.text = data.liquidTypeText
         
-        let dateString = dateFormatter.string(from: Date())
-        timeLabel.text = dateString
+        timeLabel.text = dateFormatter.string(from: data.loginTime)
+        
     }
 }

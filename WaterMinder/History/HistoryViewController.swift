@@ -38,16 +38,6 @@ class HistoryViewController: UIViewController,
         layout.scrollDirection = .vertical
         return collection
     }()
-   
-    private let waterLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Water")
-    private let coffeeLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Coffee")
-    private let teaLiquidType = HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea")
-    
-    private let liquidTypes = [
-        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Water"),
-        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Coffee"),
-        HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea")
-    ]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -102,30 +92,21 @@ class HistoryViewController: UIViewController,
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataManager?.getData().count ?? 0
     }
-   
-//    func reloadMyData(collectionView: UICollectionView) {
-//        collectionView.reloadData()
-//    }
     
-//    как только я переключаюсь с HistoryViewController на WaterMinderViewController и добавляю новые логи - новые логи перестают отображатся
- 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell,
+           let item = dataManager?.getData()[indexPath.item] {
 
-            let item = dataManager?.getData()[indexPath.item]
-
-            switch item?.type {
+            switch item.type {
             case .water:
-                cell.set(liquidTypes[0])
+                cell.set(.init(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Water", loginTime: item.date))
                 return cell
             case .coffee:
-                cell.set(liquidTypes[1])
+                cell.set(.init(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Coffee", loginTime: item.date))
                 return cell
             case .tea:
-                cell.set(liquidTypes[2])
-                return cell
-            case .none:
+                cell.set(.init(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea", loginTime: item.date))
                 return cell
             }
         }
