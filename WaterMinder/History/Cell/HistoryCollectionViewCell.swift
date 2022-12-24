@@ -76,6 +76,5 @@ class HistoryCollectionViewCell: BaseCollectionView {
         liquidTypeLabel.text = data.liquidTypeText
         
         timeLabel.text = dateFormatter.string(from: data.loginTime)
-        
     }
 }

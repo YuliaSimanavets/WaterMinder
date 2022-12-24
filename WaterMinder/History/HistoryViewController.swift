@@ -95,21 +95,14 @@ class HistoryViewController: UIViewController,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath) as? HistoryCollectionViewCell,
-           let item = dataManager?.getData()[indexPath.item] {
-
-            switch item.type {
-            case .water:
-                cell.set(.init(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Water", loginTime: item.date))
-                return cell
-            case .coffee:
-                cell.set(.init(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Coffee", loginTime: item.date))
-                return cell
-            case .tea:
-                cell.set(.init(liquidImage: UIImage(systemName: "cup.and.saucer"), liquidTypeText: "Tea", loginTime: item.date))
-                return cell
-            }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath)
+        
+        if let myCell = cell as? HistoryCollectionViewCell, let item = dataManager?.getData()[indexPath.item] {
+            
+            myCell.set(item.type.typeModel)
+            return myCell
         }
+        
         return UICollectionViewCell()
     }
     
@@ -157,3 +150,7 @@ class HistoryViewController: UIViewController,
         }
     }
 }
+
+
+
+
