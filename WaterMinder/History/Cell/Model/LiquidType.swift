@@ -14,24 +14,27 @@ enum LiquidType {
     case coffee
     case tea
     
-    var typeModel: HistoryCollectionViewModel {
+    var image: UIImage {
         switch self {
         case .water:
-            return HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"),
-                                              liquidTypeText: "Water",
-                                              loginTime: Date())
+            return UIImage(systemName: "cup.and.saucer")!
         case .coffee:
-            return HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"),
-                                             liquidTypeText: "Coffee",
-                                             loginTime: Date())
+            return UIImage(systemName: "cup.and.saucer")!
         case .tea:
-            return HistoryCollectionViewModel(liquidImage: UIImage(systemName: "cup.and.saucer"),
-                                             liquidTypeText: "Tea",
-                                             loginTime: Date())
-            
-//  можешь подсказать, как можно поместить "date" из LiquidModel в "loginTime: " ?
+            return UIImage(systemName: "cup.and.saucer")!
         }
     }
+    var title: String {
+        switch self {
+        case .water:
+            return "Water"
+        case .coffee:
+            return "Coffee"
+        case .tea:
+            return "Tea"
+        }
+    }
+    
 }
 
 struct LiquidModel {

@@ -99,7 +99,7 @@ class HistoryViewController: UIViewController,
         
         if let myCell = cell as? HistoryCollectionViewCell, let item = dataManager?.getData()[indexPath.item] {
             
-            myCell.set(item.type.typeModel)
+            myCell.set(HistoryCollectionViewModel(liquidImage: item.type.image, liquidTypeText: item.type.title, loginTime: item.date))
             return myCell
         }
         

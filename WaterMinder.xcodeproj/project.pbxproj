@@ -179,8 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				CAB83AB2293E424900FF1C3E /* HistoryViewController.swift */,
-				CA8D89E42951F24E007205AC /* Header */,
 				CAA130552948B48F00A05359 /* Cell */,
+				CA8D89E42951F24E007205AC /* Header */,
 				CA1B55F8294BB1C200D8093B /* Model */,
 			);
 			path = History;
