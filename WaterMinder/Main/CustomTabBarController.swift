@@ -12,19 +12,22 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let dataManager = DataManager()
         let general = WaterMinderViewController()
         let history = HistoryViewController()
-        let account = AccountViewController()
         let handbook = HandbookViewController()
         let setting = UINavigationController(rootViewController: SettingsViewController())
         
-        self.setViewControllers([general, history, account, handbook, setting], animated: false)
+        history.setDataManager(dataManager)
+        general.setDataManager(dataManager)
+              
+        self.setViewControllers([general, history, handbook, setting], animated: false)
        
         guard let items = tabBar.items else { return }
         
-        let images = ["drop.fill", "chart.bar.fill", "person.2.fill", "book.fill","gearshape.fill"]
+        let images = ["drop.fill", "chart.bar.fill", "book.fill","gearshape.fill"]
         
-        for i in 0...4 {
+        for i in 0...3 {
             items[i].image = UIImage(systemName: images[i])
         }
         

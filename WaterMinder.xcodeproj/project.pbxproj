@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA1B55F7294B919600D8093B /* LiquidType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B55F6294B919600D8093B /* LiquidType.swift */; };
+		CA3F3284294A4CED00FF73AB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F3283294A4CED00FF73AB /* DataManager.swift */; };
+		CA3F3286294A4DA900FF73AB /* LiqiudTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F3285294A4DA900FF73AB /* LiqiudTypeView.swift */; };
+		CA4B8D81294359A400B22E4B /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B8D80294359A400B22E4B /* BaseCollectionView.swift */; };
+		CA4B8D8329435C1A00B22E4B /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B8D8229435C1A00B22E4B /* SettingsModel.swift */; };
+		CA50D0212947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50D0202947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift */; };
+		CA50D0232947C40100A876EC /* HorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA50D0222947C40100A876EC /* HorizontalCollectionViewCell.swift */; };
 		CA602126293E5CDA006FFCB1 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */; };
+		CA8D89E32951EED9007205AC /* HistoryHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8D89E22951EED9007205AC /* HistoryHeaderCollectionView.swift */; };
+		CAA130542948B48A00A05359 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA130532948B48A00A05359 /* HistoryCollectionViewCell.swift */; };
 		CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7C293E418900FF1C3E /* AppDelegate.swift */; };
 		CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */; };
 		CAB83A81293E418900FF1C3E /* WaterMinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83A80293E418900FF1C3E /* WaterMinderViewController.swift */; };
@@ -19,10 +28,11 @@
 		CAB83AAF293E422B00FF1C3E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AAE293E422B00FF1C3E /* SettingsViewController.swift */; };
 		CAB83AB1293E423E00FF1C3E /* HandbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AB0293E423E00FF1C3E /* HandbookViewController.swift */; };
 		CAB83AB3293E424900FF1C3E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AB2293E424900FF1C3E /* HistoryViewController.swift */; };
-		CAB83AB5293E425400FF1C3E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AB4293E425400FF1C3E /* AccountViewController.swift */; };
 		CAB83AC1293E4BB400FF1C3E /* HandbookChallengesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AC0293E4BB400FF1C3E /* HandbookChallengesViewCell.swift */; };
 		CAB83AC3293E4BCC00FF1C3E /* HandbookHeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB83AC2293E4BCC00FF1C3E /* HandbookHeaderCollection.swift */; };
 		CABBA3E32940D2E000B26EE4 /* HandbookHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBA3E22940D2E000B26EE4 /* HandbookHeaderView.swift */; };
+		CABBA3F42941117E00B26EE4 /* SettingsHeaderTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBA3F32941117E00B26EE4 /* SettingsHeaderTitleViewCell.swift */; };
+		CABBA3F72941119600B26EE4 /* SettingsImageWithTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBA3F62941119600B26EE4 /* SettingsImageWithTitleViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +53,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA1B55F6294B919600D8093B /* LiquidType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidType.swift; sourceTree = "<group>"; };
+		CA3F3283294A4CED00FF73AB /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CA3F3285294A4DA900FF73AB /* LiqiudTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiqiudTypeView.swift; sourceTree = "<group>"; };
+		CA4B8D80294359A400B22E4B /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
+		CA4B8D8229435C1A00B22E4B /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		CA50D0202947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
+		CA50D0222947C40100A876EC /* HorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		CA8D89E22951EED9007205AC /* HistoryHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderCollectionView.swift; sourceTree = "<group>"; };
+		CAA130532948B48A00A05359 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CAB83A79293E418900FF1C3E /* WaterMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB83A7C293E418900FF1C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAB83A7E293E418900FF1C3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,10 +78,11 @@
 		CAB83AAE293E422B00FF1C3E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CAB83AB0293E423E00FF1C3E /* HandbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookViewController.swift; sourceTree = "<group>"; };
 		CAB83AB2293E424900FF1C3E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		CAB83AB4293E425400FF1C3E /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		CAB83AC0293E4BB400FF1C3E /* HandbookChallengesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookChallengesViewCell.swift; sourceTree = "<group>"; };
 		CAB83AC2293E4BCC00FF1C3E /* HandbookHeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookHeaderCollection.swift; sourceTree = "<group>"; };
 		CABBA3E22940D2E000B26EE4 /* HandbookHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookHeaderView.swift; sourceTree = "<group>"; };
+		CABBA3F32941117E00B26EE4 /* SettingsHeaderTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderTitleViewCell.swift; sourceTree = "<group>"; };
+		CABBA3F62941119600B26EE4 /* SettingsImageWithTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsImageWithTitleViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +110,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA1B55F8294BB1C200D8093B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA1B55F6294B919600D8093B /* LiquidType.swift */,
+			);
+			name = Model;
+			path = Cell/Model;
+			sourceTree = "<group>";
+		};
+		CA4B8D8429435DAA00B22E4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA4B8D8229435C1A00B22E4B /* SettingsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA50D0242947C42600A876EC /* HorizontalCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CA50D0202947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift */,
+				CA50D0252947C45700A876EC /* Cells */,
+			);
+			path = HorizontalCollectionView;
+			sourceTree = "<group>";
+		};
+		CA50D0252947C45700A876EC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CA50D0222947C40100A876EC /* HorizontalCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CA602124293E59A4006FFCB1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				CA602125293E5CDA006FFCB1 /* CustomTabBarController.swift */,
+				CA4B8D80294359A400B22E4B /* BaseCollectionView.swift */,
+				CA3F3283294A4CED00FF73AB /* DataManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -112,6 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				CAB83AAE293E422B00FF1C3E /* SettingsViewController.swift */,
+				CABBA3F52941118200B26EE4 /* Cells */,
+				CA76D72E2944F0C100F63FA6 /* Headers */,
+				CA4B8D8429435DAA00B22E4B /* Model */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -120,16 +179,35 @@
 			isa = PBXGroup;
 			children = (
 				CAB83AB2293E424900FF1C3E /* HistoryViewController.swift */,
+				CAA130552948B48F00A05359 /* Cell */,
+				CA8D89E42951F24E007205AC /* Header */,
+				CA1B55F8294BB1C200D8093B /* Model */,
 			);
 			path = History;
 			sourceTree = "<group>";
 		};
-		CA60212A293E63FF006FFCB1 /* Account */ = {
+		CA76D72E2944F0C100F63FA6 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				CAB83AB4293E425400FF1C3E /* AccountViewController.swift */,
+				CABBA3F32941117E00B26EE4 /* SettingsHeaderTitleViewCell.swift */,
 			);
-			path = Account;
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		CA8D89E42951F24E007205AC /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CA8D89E22951EED9007205AC /* HistoryHeaderCollectionView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		CAA130552948B48F00A05359 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CAA130532948B48A00A05359 /* HistoryCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CAB83A70293E418900FF1C3E = {
@@ -160,7 +238,6 @@
 				CA602124293E59A4006FFCB1 /* Main */,
 				CAB83AAD293E41F500FF1C3E /* WaterMinder */,
 				CA602129293E63DC006FFCB1 /* History */,
-				CA60212A293E63FF006FFCB1 /* Account */,
 				CA602127293E63B6006FFCB1 /* Handbook */,
 				CA602128293E63D4006FFCB1 /* Settings */,
 				CAB83A85293E418A00FF1C3E /* Assets.xcassets */,
@@ -191,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB83A80293E418900FF1C3E /* WaterMinderViewController.swift */,
+				CA3F3285294A4DA900FF73AB /* LiqiudTypeView.swift */,
 			);
 			path = WaterMinder;
 			sourceTree = "<group>";
@@ -210,6 +288,15 @@
 				CABBA3E22940D2E000B26EE4 /* HandbookHeaderView.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		CABBA3F52941118200B26EE4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CABBA3F62941119600B26EE4 /* SettingsImageWithTitleViewCell.swift */,
+				CA50D0242947C42600A876EC /* HorizontalCollectionView */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,15 +429,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CABBA3F42941117E00B26EE4 /* SettingsHeaderTitleViewCell.swift in Sources */,
+				CA3F3284294A4CED00FF73AB /* DataManager.swift in Sources */,
+				CA4B8D81294359A400B22E4B /* BaseCollectionView.swift in Sources */,
+				CA1B55F7294B919600D8093B /* LiquidType.swift in Sources */,
+				CAA130542948B48A00A05359 /* HistoryCollectionViewCell.swift in Sources */,
 				CAB83AC3293E4BCC00FF1C3E /* HandbookHeaderCollection.swift in Sources */,
 				CAB83A81293E418900FF1C3E /* WaterMinderViewController.swift in Sources */,
 				CA602126293E5CDA006FFCB1 /* CustomTabBarController.swift in Sources */,
 				CAB83A7D293E418900FF1C3E /* AppDelegate.swift in Sources */,
-				CAB83AB5293E425400FF1C3E /* AccountViewController.swift in Sources */,
+				CA4B8D8329435C1A00B22E4B /* SettingsModel.swift in Sources */,
+				CA50D0232947C40100A876EC /* HorizontalCollectionViewCell.swift in Sources */,
+				CA50D0212947C1F500A876EC /* SettingsHorizontalCollectionViewCell.swift in Sources */,
+				CABBA3F72941119600B26EE4 /* SettingsImageWithTitleViewCell.swift in Sources */,
 				CABBA3E32940D2E000B26EE4 /* HandbookHeaderView.swift in Sources */,
 				CAB83A7F293E418900FF1C3E /* SceneDelegate.swift in Sources */,
+				CA8D89E32951EED9007205AC /* HistoryHeaderCollectionView.swift in Sources */,
 				CAB83AC1293E4BB400FF1C3E /* HandbookChallengesViewCell.swift in Sources */,
 				CAB83AB3293E424900FF1C3E /* HistoryViewController.swift in Sources */,
+				CA3F3286294A4DA900FF73AB /* LiqiudTypeView.swift in Sources */,
 				CAB83AB1293E423E00FF1C3E /* HandbookViewController.swift in Sources */,
 				CAB83AAF293E422B00FF1C3E /* SettingsViewController.swift in Sources */,
 			);
