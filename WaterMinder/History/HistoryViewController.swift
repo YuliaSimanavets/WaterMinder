@@ -19,14 +19,16 @@ class HistoryViewController: UIViewController,
         history.text = "History"
         history.font = .systemFont(ofSize: 30, weight: .heavy)
         history.textColor = .black
+        history.translatesAutoresizingMaskIntoConstraints = false
         return history
     }()
     
     private var historySegmentedControl: UISegmentedControl = {
         let segmented = UISegmentedControl()
         segmented.backgroundColor = .white
-        segmented.selectedSegmentTintColor = .systemBlue
+        segmented.selectedSegmentTintColor = .systemTeal
         segmented.tintColor = .white
+        segmented.translatesAutoresizingMaskIntoConstraints = false
         return segmented
     }()
     
@@ -39,8 +41,12 @@ class HistoryViewController: UIViewController,
         return collection
     }()
     
+    private var dataItems = [LiquidModel]()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        dataItems = dataManager?.getData() ?? []
         
         historyCollectionView.reloadData()
     }
@@ -51,10 +57,8 @@ class HistoryViewController: UIViewController,
         view.backgroundColor = .lightGray
         
         view.addSubview(historyLabel)
-        historyLabel.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(historySegmentedControl)
-        historySegmentedControl.translatesAutoresizingMaskIntoConstraints = false
         historySegmentedControl.addTarget(self, action: #selector(segmentControllerTapped), for: .valueChanged)
         
         historySegmentedControl.insertSegment(withTitle: "D", at: 0, animated: true)
@@ -71,7 +75,9 @@ class HistoryViewController: UIViewController,
         historyCollectionView.register(HistoryHeaderCollectionView.self,
                                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                        withReuseIdentifier: HistoryHeaderCollectionView.identifier)
-                
+        
+        dataItems = dataManager?.getData() ?? []
+        
         NSLayoutConstraint.activate([
             historyLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             historyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -90,14 +96,15 @@ class HistoryViewController: UIViewController,
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataManager?.getData().count ?? 0
+        return dataItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCollectionViewCell.identifier, for: indexPath)
+        let item = dataItems[indexPath.item]
         
-        if let myCell = cell as? HistoryCollectionViewCell, let item = dataManager?.getData()[indexPath.item] {
+        if let myCell = cell as? HistoryCollectionViewCell {
             
             myCell.set(HistoryCollectionViewModel(liquidImage: item.type.image, liquidTypeText: item.type.title, loginTime: item.date))
             return myCell
@@ -138,13 +145,17 @@ class HistoryViewController: UIViewController,
         
         switch parameter.selectedSegmentIndex {
         case 0:
-            print("1")
+            dataItems = dataManager?.getData(.day) ?? []
+            historyCollectionView.reloadData()
         case 1:
-            print("2")
+            dataItems = dataManager?.getData(.week) ?? []
+            historyCollectionView.reloadData()
         case 2:
-            print("3")
+            dataItems = dataManager?.getData(.month) ?? []
+            historyCollectionView.reloadData()
         case 3:
-            print("4")
+            dataItems = dataManager?.getData(.year) ?? []
+            historyCollectionView.reloadData()
         default:
             break
         }

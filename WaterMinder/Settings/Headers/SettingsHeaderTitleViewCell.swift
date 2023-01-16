@@ -21,7 +21,7 @@ class SettingsHeaderTitleViewCell: UICollectionViewCell {
     
     let titleLabel: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.font = .systemFont(ofSize: 24, weight: .heavy)
+        titleLabel.font = .systemFont(ofSize: 24, weight: .medium)
         titleLabel.textColor = .black
         return titleLabel
     }()

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum LiquidType {
+enum LiquidType: Codable {
     
     case water
     case coffee
@@ -17,13 +17,14 @@ enum LiquidType {
     var image: UIImage {
         switch self {
         case .water:
-            return UIImage(systemName: "cup.and.saucer")!
+            return UIImage(named: "water")!
         case .coffee:
-            return UIImage(systemName: "cup.and.saucer")!
+            return UIImage(named: "сoffee")!
         case .tea:
-            return UIImage(systemName: "cup.and.saucer")!
+            return UIImage(named: "tea")!
         }
     }
+    
     var title: String {
         switch self {
         case .water:
@@ -34,12 +35,10 @@ enum LiquidType {
             return "Tea"
         }
     }
-    
 }
 
-struct LiquidModel {
+struct LiquidModel: Codable {
     
     let date: Date
     let type: LiquidType
-    
 }

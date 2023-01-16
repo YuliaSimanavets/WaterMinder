@@ -24,12 +24,16 @@ class SettingsImageWithTitleViewCell: UICollectionViewCell {
     
     private let titleLabel: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.font = .systemFont(ofSize: 18, weight: .heavy)
+        titleLabel.font = .systemFont(ofSize: 18)
         titleLabel.textColor = .black
         return titleLabel
     }()
     
-    private let nearTitleImageView = UIImageView()
+    private let nearTitleImageView: UIImageView = {
+        let nearTitleImageView = UIImageView()
+        nearTitleImageView.tintColor = .white
+        return nearTitleImageView
+    }()
         
     private var mySwitch: UISwitch = {
         let mySwitch = UISwitch()
@@ -61,7 +65,8 @@ class SettingsImageWithTitleViewCell: UICollectionViewCell {
     func setupView() {
 //        super.setupView()
         
-        contentView.backgroundColor = .gray
+        contentView.backgroundColor = .systemTeal
+        contentView.layer.cornerRadius = 10
         
         contentView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -78,12 +83,12 @@ class SettingsImageWithTitleViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             nearTitleImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             nearTitleImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: generalIndents),
-            nearTitleImageView.heightAnchor.constraint(equalToConstant: 40),
-            nearTitleImageView.widthAnchor.constraint(equalToConstant: 40),
+            nearTitleImageView.heightAnchor.constraint(equalToConstant: 25),
+            nearTitleImageView.widthAnchor.constraint(equalToConstant: 25),
             
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: nearTitleImageView.trailingAnchor, constant: generalIndents),
-            titleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.centerXAnchor, constant: 10),
+            titleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: -40),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 10),
             
             mySwitch.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
@@ -98,7 +103,6 @@ class SettingsImageWithTitleViewCell: UICollectionViewCell {
         
         titleLabel.text = data.title
         nearTitleImageView.image = data.nearTitleImage
-        nearTitleImageView.tintColor = .systemCyan
         
         mySwitch.isOn = data.switchValue
         
