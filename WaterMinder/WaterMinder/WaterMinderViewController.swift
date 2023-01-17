@@ -9,16 +9,28 @@ import UIKit
 
 class WaterMinderViewController: UIViewController {
     
+    private let generalTitle: UILabel = {
+        let generalTitle = UILabel()
+        generalTitle.text = "Add a drink"
+        generalTitle.textColor = .black
+        generalTitle.font = .systemFont(ofSize: 30, weight: .heavy)
+        generalTitle.translatesAutoresizingMaskIntoConstraints = false
+        return generalTitle
+    }()
+    
     private let waterLiquid = LiqiudTypeView()
     private let coffeeLiquid = LiqiudTypeView()
     private let teaLiquid = LiqiudTypeView()
     
     var dataManager: DataManager?
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemGray3
+        view.backgroundColor = .lightGray
+        view.addSubview(generalTitle)
 
         let waterGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(waterTapAction))
         view.addSubview(waterLiquid)
@@ -30,7 +42,7 @@ class WaterMinderViewController: UIViewController {
         let coffeeGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(coffeeTapAction))
         view.addSubview(coffeeLiquid)
         coffeeLiquid.translatesAutoresizingMaskIntoConstraints = false
-        coffeeLiquid.set(LiqiudTypeViewModel(liquidImage: UIImage(named: "coffee"), liquidText: "Coffe"))
+        coffeeLiquid.set(LiqiudTypeViewModel(liquidImage: UIImage(named: "сoffee"), liquidText: "Coffee"))
         coffeeLiquid.addGestureRecognizer(coffeeGestureRecognizer)
         coffeeLiquid.isUserInteractionEnabled = true
         
@@ -43,7 +55,7 @@ class WaterMinderViewController: UIViewController {
 
         
         let plusButton = UIImageView(image: UIImage(systemName: "plus.circle")?.withRenderingMode(.alwaysTemplate))
-        plusButton.tintColor = .orange
+        plusButton.tintColor = .systemTeal
         plusButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(plusButton)
         
@@ -51,6 +63,10 @@ class WaterMinderViewController: UIViewController {
         plusButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            generalTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            generalTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            generalTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
             waterLiquid.topAnchor.constraint(equalTo: view.centerYAnchor),
             waterLiquid.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             waterLiquid.widthAnchor.constraint(equalToConstant: 90),
@@ -81,21 +97,18 @@ class WaterMinderViewController: UIViewController {
     func waterTapAction(_ tapButton: UIButton) {
         
         dataManager?.addData(LiquidModel(date: Date(), type: .water))
-        print("water")
     }
     
     @objc
     func coffeeTapAction() {
         
         dataManager?.addData(LiquidModel(date: Date(), type: .coffee))
-        print("coffee")
     }
     
     @objc
     func teaTapAction() {
         
         dataManager?.addData(LiquidModel(date: Date(), type: .tea))
-        print("tea")
     }
 }
 

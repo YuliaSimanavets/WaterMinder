@@ -23,7 +23,7 @@ class LiqiudTypeView: UIView {
     private let liquidLabel: UILabel = {
         let liquidLabel = UILabel()
         liquidLabel.font = .systemFont(ofSize: 14)
-        liquidLabel.textColor = .white
+        liquidLabel.textColor = .black
         return liquidLabel
     }()
     
@@ -45,7 +45,7 @@ class LiqiudTypeView: UIView {
     func setupView() {
         
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .lightGray
+        backgroundColor = .systemTeal
         layer.cornerRadius = 10
         
         addSubview(liquidImageView)

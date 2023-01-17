@@ -28,7 +28,7 @@ class HistoryCollectionViewCell: BaseCollectionView {
     private let liquidTypeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
 
@@ -38,12 +38,17 @@ class HistoryCollectionViewCell: BaseCollectionView {
         return date
     }()
     
-    private var timeLabel = UILabel()
+    private var timeLabel: UILabel = {
+        let timeLabel = UILabel()
+        timeLabel.textColor = .black
+        return timeLabel
+    }()
     
     override func setupView() {
         super.setupView()
         
-        backgroundColor = .orange
+        backgroundColor = .systemTeal
+        layer.cornerRadius = 10
         
         addSubview(liquidImageView)
         liquidImageView.translatesAutoresizingMaskIntoConstraints = false

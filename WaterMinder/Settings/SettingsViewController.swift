@@ -24,13 +24,13 @@ class SettingsViewController: UIViewController,
     }()
     
     let arrayCells: [[SettingsModel]] = [
-        [.otherDrinks(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(systemName: "mug"), title: "Other Drinks", showSwitch: false, switchValue: false))],
-        [.theme(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(systemName: "slider.horizontal.2.square.on.square"), title: "Theme", showSwitch: false, switchValue: false)),
-         .appIcon(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(systemName: "app.badge.checkmark"), title: "App Icon", showSwitch: false, switchValue: false)),
-         .homeScreen(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(systemName: "doc.on.clipboard"), title: "Home Screen", showSwitch: false, switchValue: false)),
-         .appleWatch(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(systemName: "applewatch.watchface"), title: "Apple Watch", showSwitch: false, switchValue: false)),
-         .sharing(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(systemName: "person.2"), title: "Sharing", showSwitch: true, switchValue: true))],
-        [.siriShortcuts(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(systemName: "mic"), title: "Siri Shortcuts", showSwitch: false, switchValue: false))]
+        [.otherDrinks(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(named: "drinks"), title: "Other Drinks", showSwitch: false, switchValue: false))],
+        [.theme(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(named: "theme"), title: "Theme", showSwitch: false, switchValue: false)),
+         .appIcon(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(named: "appicon"), title: "App Icon", showSwitch: false, switchValue: false)),
+         .homeScreen(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(named: "screen"), title: "Home Screen", showSwitch: false, switchValue: false)),
+         .appleWatch(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(named: "applewatch"), title: "Apple Watch", showSwitch: false, switchValue: false)),
+         .sharing(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(named: "sharing"), title: "Sharing", showSwitch: true, switchValue: true))],
+        [.siriShortcuts(SettingsImageWithTitleViewModel(nearTitleImage: UIImage(named: "siri"), title: "Siri Shortcuts", showSwitch: false, switchValue: false))]
         ]
 
     let arrayHeader: [[SettingsModel]] = [
